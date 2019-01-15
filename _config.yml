@@ -110,3 +110,11 @@ live2d:
     height: 150
   mobile:
     show: true
+
+
+math:
+  engine: 'mathjax' # or 'katex'
+  mathjax:
+    # src: custom_mathjax_source
+    config:
+      # MathJax config
