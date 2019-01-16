@@ -1,9 +1,51 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[Eigen中对各种形式的表达总结]]></title>
+    <url>%2F2019%2F01%2F15%2FEigen%E4%B8%AD%E5%AF%B9%E5%90%84%E7%A7%8D%E5%BD%A2%E5%BC%8F%E7%9A%84%E8%A1%A8%E8%BE%BE%E6%80%BB%E7%BB%93%2F</url>
+    <content type="text"><![CDATA[Eigen中对各种形式的表达如下 旋转矩阵（３ｘ３）：Eigen::Matrix3d. 旋转向量（３ｘ１）：Eigen::AngleAxisd. 欧拉角（３ｘ１）：Eigen::Vector3d. 四元数（４ｘ１）：Eigen::Quaterniond. 欧式变换矩阵（４ｘ４）：Eigen::Isometry3d. 仿射变换（４ｘ４）：Eigen::Affine3d. 射影变换（４ｘ４）：Eigen::Projective3d.]]></content>
+      <tags>
+        <tag>Slam</tag>
+        <tag>Eigen</tag>
+        <tag>C++</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[Linux下shell编程实现创建文章并打开]]></title>
+    <url>%2F2019%2F01%2F14%2FLishell%E7%BC%96%E7%A8%8B%E5%AE%9E%E7%8E%B0%E5%88%9B%E5%BB%BA%E6%96%87%E7%AB%A0%E5%B9%B6%E6%89%93%E5%BC%80%2F</url>
+    <content type="text"><![CDATA[bash代码如下1234567891011#!/bin/bashecho "请输入文章名"read titleecho "$title is your title"cd /your/bolg/rootdirhexo new $titleecho "创建成功"cd /your/bolg/rootdir/source/_posts/titles=$(find . -iname "*$title.md")echo $titlesgnome-open $titles &amp;&amp; exit]]></content>
+      <categories>
+        <category>未归类</category>
+      </categories>
+  </entry>
+  <entry>
+    <title><![CDATA[Slam中Sophus函数的使用]]></title>
+    <url>%2F2019%2F01%2F14%2FSlSophus%E5%87%BD%E6%95%B0%E7%9A%84%E4%BD%BF%E7%94%A8%2F</url>
+    <content type="text"><![CDATA[SO(3)初始化矩阵 12 // 沿Z轴转90度的旋转矩阵Eigen::Matrix3d R = Eigen::AngleAxisd(M_PI/2, Eigen::Vector3d(0,0,1)).toRotationMatrix(); 构造 1234Sophus::SO3 SO3_R(R); // Sophus::SO(3)可以直接从旋转矩阵构造Sophus::SO3 SO3_v( 0, 0, M_PI/2 ); // 亦可从旋转向量构造Eigen::Quaterniond q(R); // 或者四元数Sophus::SO3 SO3_q( q ); 映射 1234567使用对数映射获得它的李代数Eigen::Vector3d so3 = SO3_R.log();cout&lt;&lt;"so3 = "&lt;&lt;so3.transpose()&lt;&lt;endl;// hat 为向量到反对称矩阵cout&lt;&lt;"so3 hat=\n"&lt;&lt;Sophus::SO3::hat(so3)&lt;&lt;endl;// 相对的，vee为反对称到向量cout&lt;&lt;"so3 hat vee= "&lt;&lt;Sophus::SO3::vee( Sophus::SO3::hat(so3) ).transpose()&lt;&lt;endl; // transpose纯粹是为了输出美观一些 更新 123Eigen::Vector3d update_so3(1e-4, 0, 0); //假设更新量为这么多Sophus::SO3 SO3_updated = Sophus::SO3::exp(update_so3)*SO3_R;cout&lt;&lt;"SO3 updated = "&lt;&lt;SO3_updated&lt;&lt;endl; SE(3) 构造 123Eigen::Vector3d t(1,0,0); // 沿X轴平移1Sophus::SE3 SE3_Rt(R, t); // 从R,t构造SE(3)Sophus::SE3 SE3_qt(q,t); // 从q,t构造SE(3) 映射 12345678// 李代数se(3) 是一个六维向量，方便起见先typedef一下typedef Eigen::Matrix&lt;double,6,1&gt; Vector6d;Vector6d se3 = SE3_Rt.log();cout&lt;&lt;"se3 = "&lt;&lt;se3.transpose()&lt;&lt;endl;// 观察输出，会发现在Sophus中，se(3)的平移在前，旋转在后.// 同样的，有hat和vee两个算符cout&lt;&lt;"se3 hat = "&lt;&lt;endl&lt;&lt;Sophus::SE3::hat(se3)&lt;&lt;endl;cout&lt;&lt;"se3 hat vee = "&lt;&lt;Sophus::SE3::vee( Sophus::SE3::hat(se3) ).transpose()&lt;&lt;endl; 更新 12345Vector6d update_se3; //更新量update_se3.setZero();update_se3(0,0) = 1e-4d;Sophus::SE3 SE3_updated = Sophus::SE3::exp(update_se3)*SE3_Rt;cout&lt;&lt;"SE3 updated = "&lt;&lt;endl&lt;&lt;SE3_updated.matrix()&lt;&lt;endl; 注： 问题：cmake报错 解决：在运行程序前，需要先解压源码中的第三方库，然后make，讲make后生成的sophusconfig.cmake复制到当前工程目录 ——来自《视觉ＳＬＡＭ１４讲》]]></content>
+      <tags>
+        <tag>Slam</tag>
+        <tag>sophus</tag>
+        <tag>李群</tag>
+        <tag>李代数</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[Hexo-blog-encrypt，给博客文章加密]]></title>
+    <url>%2F2019%2F01%2F11%2Fhexo-blog-encrypt%2F</url>
+    <content type="text"><![CDATA[English ReadMe 什么是 Hexo-Blog-Encrypt 尝试着想一下，你写了一篇博客，但是，出于某种原因，不太希望每一个人都可以看到他。所以你常常会为这种文章设置一个密码，其他人需要输入密码才可以访问这篇博客。对于 emlog 或者 wordpress 来说，这很容易，但是对于 hexo 来说，之前并没有一个类似的功能。 所以，Hexo-Blog-Encrypt 因为这个需求而诞生了。 线上 Demo你可以查看 mhexo.github.io/example-site/2016/10/26/HexoBlogEncrpyt/ 所有的密码都是 “mikemessi” 安装 npm install --save hexo-blog-encrypt 或者 yarn add hexo-blog-encrypt (需要安装 Yarn) 快速开始 首先在 _config.yml 中启用该插件: 1234# Security##encrypt: enable: true 然后在你的文章的头部添加上对应的字段，如 password, abstract, message 123456789---title: hello worlddate: 2016-03-30 21:18:02tags: - fdsafsdafpassword: Mikeabstract: Welcome to my blog, enter password to read.message: Welcome to my blog, enter password to read.--- 如果你想对 TOC 也进行加密，则在 article.ejs 中将 TOC 的生成代码修改成如下： 1234567891011&lt;% if(post.toc == true)&#123; %&gt; &lt;div id=&quot;toc-div&quot; class=&quot;toc-article&quot; &lt;% if (post.encrypt == true) &#123; %&gt;style=&quot;display:none&quot; &lt;% &#125; %&gt;&gt; &lt;strong class=&quot;toc-title&quot;&gt;Index&lt;/strong&gt; &lt;% if (post.encrypt == true) &#123; %&gt; &lt;%- toc(post.origin) %&gt; &lt;% &#125; else &#123; %&gt; &lt;%- toc(post.content) %&gt; &lt;% &#125; %&gt; &lt;/div&gt;&lt;% &#125; %&gt;&lt;%- post.content %&gt; 然后使用 hexo clean &amp;&amp; hexo g &amp;&amp; hexo s，来查看效果。 具体的使用方法首先，你需要在 _config.yml 中启用该插件1234# Security##encrypt: enable: true 给文章添加密码：12345678910---title: hello worlddate: 2016-03-30 21:18:02tags: - fdsfadsfa - fdsafsdafpassword: Mikeabstract: Welcome to my blog, enter password to read.message: Welcome to my blog, enter password to read.--- password: 是该博客加密使用的密码 abstract: 是该博客的摘要，会显示在博客的列表页 message: 这个是博客查看时，密码输入框上面的描述性文字 对 TOC 进行加密如果你有一篇文章使用了 TOC，你需要修改模板的部分代码。这里用 landscape 作为例子： 你可以在 hexo/themes/landscape/layout/_partial/article.ejs 找到 article.ejs。 然后找到 &lt;% post.content %&gt; 这段代码，通常在30行左右。 使用如下的代码来替代它:1234567891011&lt;% if(post.toc == true)&#123; %&gt; &lt;div id=&quot;toc-div&quot; class=&quot;toc-article&quot; &lt;% if (post.encrypt == true) &#123; %&gt;style=&quot;display:none&quot; &lt;% &#125; %&gt;&gt; &lt;strong class=&quot;toc-title&quot;&gt;Index&lt;/strong&gt; &lt;% if (post.encrypt == true) &#123; %&gt; &lt;%- toc(post.origin, &#123;list_number: true&#125;) %&gt; &lt;% &#125; else &#123; %&gt; &lt;%- toc(post.content, &#123;list_number: true&#125;) %&gt; &lt;% &#125; %&gt; &lt;/div&gt;&lt;% &#125; %&gt;&lt;%- post.content %&gt; 修改加密模板 如果你对默认的主题不满意，或者希望修改默认的提示和摘要内容，你可以添加如下配置在 _config.yml 中。 123456789101112131415161718# Security##encrypt: enable: true default_abstract: the content has been encrypted, enter the password to read.&lt;/br&gt; default_message: Please enter the password to read. default_template: &lt;script src=&quot;//cdn.bootcss.com/jquery/1.11.3/jquery.min.js&quot;&gt;&lt;/script&gt; &lt;div id=&quot;hbe-security&quot;&gt; &lt;div class=&quot;input-container&quot;&gt; &lt;input type=&quot;password&quot; class=&quot;form-control&quot; id=&quot;pass&quot; placeholder=&quot; &#123;&#123;message&#125;&#125; &quot; /&gt; &lt;label for=&quot;pass&quot;&gt; &#123;&#123;message&#125;&#125; &lt;/label&gt; &lt;div class=&quot;bottom-line&quot;&gt;&lt;/div&gt; &lt;/div&gt; &lt;/div&gt; &lt;div id=&quot;encrypt-blog&quot; style=&quot;display:none&quot;&gt; &#123;&#123;content&#125;&#125; &lt;/div&gt; 可以看见，和上面的配置文件对比来看，多了 default_template 和 default_abstract 和 default_message 配置项。 default_abstract : 这个是指在文章列表页，我们看到的加密文章描述。当然这是对所有加密文章生效的。 default_message : 这个在文章详情页的密码输入框上方的描述性文字。 default_template : 这个是指在文章详情页，我们看到的输入密码阅读的模板，同理，这个也是针对所有文章的 开始的解密部分需要由 div 包裹，而且 div 的 id 必须 是 ‘hbe-security’，解密后以便于隐藏。 最后的 content 显示 div 的 id 必须 是 ‘encrypt-blog’，同时为了好看，也希望进行隐藏。 同时，必须要有一个 input 输入框，id 必须是”pass”，用来供用户输入密码。 输入密码之后，务必要有一个触发器，用来调用 ‘decryptAES’ 函数。样例中以 button 来触发。 如果你希望对某一篇特定的文章做特殊处理，这有两种方法可以达到这个效果, 在博客的源文件添加 template 配置: 12345678910111213141516171819202122---title: hello worlddate: 2016-03-30 21:18:02tags: - fdsfadsfa - fdsafsdafpassword: Mikeabstract: Welcome to my blog, enter password to read.message: Welcome to my blog, enter password to read.template: &lt;script src=&quot;//cdn.bootcss.com/jquery/1.11.3/jquery.min.js&quot;&gt;&lt;/script&gt; &lt;div id=&quot;hbe-security&quot;&gt; &lt;div class=&quot;input-container&quot;&gt; &lt;input type=&quot;password&quot; class=&quot;form-control&quot; id=&quot;pass&quot; placeholder=&quot; &#123;&#123;message&#125;&#125; &quot; /&gt; &lt;label for=&quot;pass&quot;&gt; &#123;&#123;message&#125;&#125; &lt;/label&gt; &lt;div class=&quot;bottom-line&quot;&gt;&lt;/div&gt; &lt;/div&gt; &lt;/div&gt; &lt;div id=&quot;encrypt-blog&quot; style=&quot;display:none&quot;&gt; &#123;&#123;content&#125;&#125; &lt;/div&gt;--- TODOSee TODO File LicenseSee LICENSE File. ThanksCollaborator - xiazeyu]]></content>
+      <categories>
+        <category>未归类</category>
+      </categories>
+      <tags>
+        <tag>hexo</tag>
+        <tag>blog</tag>
+        <tag>加密</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[Gnome桌面环境下VNC远程桌面配置]]></title>
     <url>%2F2019%2F01%2F11%2FGnome%E6%A1%8C%E9%9D%A2%E7%8E%AF%E5%A2%83%E4%B8%8BVNC%E8%BF%9C%E7%A8%8B%E6%A1%8C%E9%9D%A2%E9%85%8D%E7%BD%AE%2F</url>
-    <content type="text"><![CDATA[Please enter the password to read the blog. Incorrect Password! No content to display! U2FsdGVkX19HESqT07rRTjOKjcGK0pAspYP/Sl/CIkWtK8afovDYIfyjW+/4uY+99RVlr7MkvZIMNXRVKZ+6xMzB+OqnTlehrsPFXy0vzCfWtR6PqQ4MRML/3dPvjBVMC+dGT0rMbOVMfOKzpHr2yv2rS+USLfQtrckQHvjLOoGqsGr8In+rWiL7wWNGSb67HKtuHjbUWWruK6vzlQU8YsJwEYWh19NrVeCggNZUtEKCl5DaChC+0jBLTwLM4v3SLXBpTWCSZLBDerFvqkBxc5/hj/YqRtUtgvWyxNB+IgYiZAYb6C2vdcUpRPSvt/t6MuebBBfausKqJAyPFKOymyfNJdGvW6U1db8r3oAOpC5EVVKk0dfKxJoy6+94OcZaMMgARIU6u5a8QvWVWImpiisRIjL01Fo7Io0vA6aluqhBDp0c/V8cuSPdPS/21qvmFe3xfy1UeFiHFtnLC9AIrxrGghPQFwM5iG5giDilid02IXNrbI3YjXN7esayyoGseZp6Xn9QyzWiqBWtilct0bAsAABx88clIAWGEl0tZs5zQkRcawYytS6ZdmCB01a6dN26p51B+QMsvk+yDovG6Pfaly/kkExwOd7zEoQPeJthNIJA44kBsI1W3VBqXDtz6Ldjwls/jswa3EpLjU3Q1AVKHhOiBanp9MmYodHCZ7aaXdNL8Vql0y2IVU8x5yF/Ql7nWOtonXYY4d32tLKsFcOTqAUw/ajmX72dC9JHelxbeCW0bJOuiIhhc+5ULMUJFudRjy9jVgnq0s+tmD2/f1dIVMP4Ok03hZiGw+yiHB4XeY4TgWZDiTdkJblcK9bXt+OV6dPVVZdMrAOZPc9WPt72zqa0lmvcWqsMz6sLByNFsMfS7DDSCotdH1QH8DmHQjxiiw7LiwWs5sGFpYJjmrUvTF+1lv5NsLm8+R585zwDSrKuF7iJ/Y207HRzFdYVIl+2wNOU7AJC04L2MSFC5wT2LTFDXXGYk7xIbDjWFBYRrUoBi+/HdQwVQR6OUyIcHAlQj+Fhrq4hliZni2o+DZtAayDCU7OQ4+fhXAkr26GOjAvNlP6LQn1/mpRCtvUZB5FDWBB5Nc1ZwWXGeUIWPECEM9l1vLRGJGyqqp/7jaG4CqPdKKIa77aieGKeB7TzLkCFkZziMZq8XWkTYvLNCIHbzgR7W9pjybcPwjULwadUqwGtGz8lF0xql1R9pt1DLINYlUfmQRXk9+MYxLUHprUUR9namqmBWIqtLvojK0QPJAUDDuryExORsW0Dpnj1h0tQedpLC+Bk7DyUiK8UxHPN8KzDJ7V2TzGpw+lF2E52DRyf2KC5ThwPZZTXcravsohM8qtcTbnZ3uye0YxhifH23y4vgounv0ix+SzXU6Uc61ZEW2HMtvXIDmER7thy]]></content>
+    <content type="text"><![CDATA[点击Setting 点击Sharing 点击屏幕共享 点击激活，配置好密码，默认会开启5900的VNC远程连接端口，使用vnc连接就成功了 在终端运行dconf-editor，依次点开 org&gt;gnome&gt;desktop&gt;remote-access，配置如下：]]></content>
       <tags>
         <tag>Linux</tag>
         <tag>远程桌面</tag>
@@ -59,14 +101,14 @@
   <entry>
     <title><![CDATA[关于本博客主题的所有]]></title>
     <url>%2F2018%2F12%2F21%2F%E5%85%B3%E4%BA%8E%E6%9C%AC%E5%8D%9A%E5%AE%A2%E4%B8%BB%E9%A2%98%E7%9A%84%E6%89%80%E6%9C%89%2F</url>
-    <content type="text"><![CDATA[第一个坑，语言设置不对 因为版本不同，所以新版本的ＮｅｘＴ需要设置语言项为 1language: zh-CN 才能显示中文 第二个个坑。插入图片 因为开启了资源文件夹，所以如果需要插入图片，直接放进文章相应的资源文件夹。然后直接使用文件名就可以了，不需要加路径。如下 1![](TIM图片20190111152920.png) NexT主题配置教程https://theme-next.iissnan.com/getting-started.html Hexo安装配置文档https://hexo.io/zh-cn/docs/]]></content>
+    <content type="text"><![CDATA[第一个坑，语言设置不对 因为版本不同，所以新版本的ＮｅｘＴ需要设置语言项为 1language: zh-CN 才能显示中文 第二个个坑。插入图片因为开启了资源文件夹，所以如果需要插入图片，直接放进文章相应的资源文件夹。然后直接使用文件名就可以了，不需要加路径。如下 1![](TIM图片20190111152920.png) hexo中插入数学公式 hexo原生不支持公式渲染，需要安装插件参考如下http://stevenshi.me/2017/06/26/hexo-insert-formula/https://www.jianshu.com/p/7ab21c7f0674 NexT主题配置教程https://theme-next.iissnan.com/getting-started.html Hexo安装配置文档https://hexo.io/zh-cn/docs/]]></content>
       <categories>
         <category>建站</category>
         <category>Hexo</category>
       </categories>
       <tags>
-        <tag>hexo</tag>
         <tag>主题</tag>
+        <tag>hexo</tag>
         <tag>NexT</tag>
       </tags>
   </entry>
