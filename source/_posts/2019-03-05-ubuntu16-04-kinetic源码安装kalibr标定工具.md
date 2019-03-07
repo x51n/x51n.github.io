@@ -1,8 +1,8 @@
 ---
 title: ubuntu16.04+kinetic源码安装kalibr标定工具
 categories:
-  - slam
-    - 标定
+  - slam 
+  - 标定
 date: 2019-03-05 20:57:41
 tags:
   - kalibr
