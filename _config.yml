@@ -92,6 +92,8 @@ search:
 ##
 encrypt:
     enable: true
+    default_abstract: 都散了吧，文章加密了.</br>
+    default_message: 天王盖地虎.
 
 # 挂件
 live2d:
