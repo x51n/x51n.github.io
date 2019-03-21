@@ -1,6 +1,7 @@
 @echo off
 mode con lines=30 cols=60
-cd C:\Users\xsin\Documents\Github\xsin\ 
+
+cd C:\Users\xsin\Documents\xsin\ 
 echo.================================
 echo.       «Î ‰»Î±ÍÃ‚
 echo.================================
