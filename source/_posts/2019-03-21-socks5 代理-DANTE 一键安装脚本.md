@@ -1,5 +1,5 @@
 ---
-title: socks5 代理: DANTE 一键安装脚本
+title: socks5 代理- DANTE 一键安装脚本
 date: 2019-03-21 19:02:28
 password: qaz123456
 tags:
