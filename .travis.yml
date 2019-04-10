@@ -33,3 +33,5 @@ after_success:
 # 这里的 REPO_TOKEN 即之前在 travis 项目的环境变量里添加的
 - git push --quiet --force https://$REPO_TOKEN@github.com/x51n/x51n.github.io.git
   master
+- git push --quiet --force https://$REPO_TOKEN_gitee@gitee.com/xsin/xsin.git
+  master
