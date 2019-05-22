@@ -44,27 +44,29 @@ sudo chmod 640 /var/www/me.dav
 sudo vim /etc/apache2/sites-available/webdav.conf
 ```
 
-> ```
-> <VirtualHost *:80>
->         ServerAdmin webmaster@localhost
->         DocumentRoot /var/www/sync/
->         <Directory /var/www/sync/>
->                 Options Indexes MultiViews
->                 AllowOverride None
->                 Require all granted
->         </Directory>
->  
->         Alias /webdav /var/www/sync
->  
->         <Location /webdav>
->            DAV On
->            AuthType Basic
->            AuthName "webdav"
->            AuthUserFile /var/www/me.dav
->            Require valid-user
->        </Location>
-> </VirtualHost>
-> ```
+```
+<VirtualHost *:80>
+     ServerAdmin webmaster@localhost
+     DocumentRoot /var/www/sync/
+     <Directory /var/www/sync/>
+             Options Indexes MultiViews
+             AllowOverride None
+             Require all granted
+     </Directory>
+
+     Alias /webdav /var/www/sync
+    
+     <Location /webdav>
+        DAV On
+        AuthType Basic
+        AuthName "webdav"
+        AuthUserFile /var/www/me.dav
+        Require valid-user
+    </Location>
+</VirtualHost>
+```
+
+
 
 ```
 cd /etc/apache2/sites-enabled/
