@@ -49,7 +49,7 @@ sudo vim /etc/apache2/sites-available/webdav.conf
      ServerAdmin webmaster@localhost
      DocumentRoot /var/www/sync/
      <Directory /var/www/sync/>
-             Options Indexes MultiViews
+             Options MultiViews
              AllowOverride None
              Require all granted
      </Directory>
