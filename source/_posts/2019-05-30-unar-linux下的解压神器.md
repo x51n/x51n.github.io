@@ -1,7 +1,7 @@
 ---
-title: unar_linux下的解压神器
+title: unar linux下的解压神器
 categories:
-  - 未归类
+  - linux
 date: 2019-05-30 17:03:59
 tags:
   - linux
@@ -64,3 +64,6 @@ lsar -e GB18030 test.zip
 unar -e GB18030 test.zip
 ```
 
+##### 注意
+
+unar解压４Ｇ以上文件可能会出错，原因未知

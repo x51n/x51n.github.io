@@ -66,15 +66,14 @@ sudo vim /etc/apache2/sites-available/webdav.conf
 </VirtualHost>
 ```
 
-
-
 ```
 cd /etc/apache2/sites-enabled/
 sudo ln -s ../sites-available/webdav.conf webdav.conf
 sudo rm 000-default.conf
 ```
 
-### **0x02. 验证**
+
+### 0x02. 验证
 
 使用命令行 cadaver 进入登录
 

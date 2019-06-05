@@ -1,11 +1,14 @@
 ---
-title: Python_and_selenium_add_socks5_proxy
+title: Python and selenium add socks5 proxy
 categories:
-  - 未归类
+  - Python
+  - selenium
 date: 2019-05-29 12:56:14
 tags:
   - python
   - selenium
+  - socks5
+  - proxy
 ---
 
 例程如下
