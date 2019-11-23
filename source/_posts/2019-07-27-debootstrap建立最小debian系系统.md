@@ -6,7 +6,7 @@ date: 2019-07-27 15:37:53
 tags:
 ---
 
-#### 在宿主机安装debootstrap及挂在磁盘
+## 0x01在宿主机安装debootstrap及挂在磁盘
 
 安装程序
 
@@ -37,9 +37,9 @@ mkfs.ext4 /dev/sda6
 # mount /dev/sda6 /mnt/debinst
 ```
 
-### 开始安装
+## 0x02 开始安装
 
-接著使用下面這行 debootstrap 命令，
+使用下面這行 debootstrap 命令，
 
 ```
 debootstrap --arch amd64 bionic rootfs-debian http://mirrors.tuna.tsinghua.edu.cn/ubuntu/
@@ -71,7 +71,7 @@ debootstrap --arch <ARCH> <VERSION> <DIRECTORY>  <MIRROR>
 
 添加`restricted universe multiverse`进源
 
-## 5、创建设备文件
+## 0x03 创建设备文件
 
 此时，/dev/ 只含有非常基本的设备文件。安装的后续步骤可能还需要更多的设备文件，所以我们安装 makedev 软件包，并创建默认的静态设备文件，使用(chroot 以后)
 
@@ -82,7 +82,7 @@ cd /dev
 MAKEDEV generic
 ```
 
-## 6、分区的挂载
+## 0x04 分区的挂载
 
 首先新建 /etc/fstab
 
@@ -119,7 +119,7 @@ mount -t proc proc /proc
 mount -t sysfs sysfs /sys
 ```
 
-## 8、网络的配置
+## 0x05 网络的配置
 
 需要安装`ifupdown`
 
@@ -162,7 +162,7 @@ iface lo inet loopback
 echo DebianHostName > /etc/hostname
 ```
 
-## 安装内核
+## 0x06 安装内核
 
 ```
 apt search linux-image
@@ -175,7 +175,7 @@ apt install linux-image-arch-etc
 apt install linux-image-4.9.0-2-amd64 linux-headers-4.9.0-2-amd64
 ```
 
-## 12、安装引导程序
+## 0x07 安装引导程序
 
 ```
 apt install grub-pc
@@ -190,5 +190,7 @@ passwd
 ```
 
 ------
+参考资料
+
 https://hosxy.github.io/2017/05/03/debootstrap%E5%AE%89%E8%A3%85debian/
 https://www.debian.org/releases/jessie/i386/apds03.html.zh-cn
