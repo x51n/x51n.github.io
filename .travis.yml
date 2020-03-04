@@ -22,7 +22,7 @@ before_install:
 install:
 # 不用yarn的话这里改成 npm i 即可
 # - yarn
-npm i
+- npm i
 script:
 - hexo clean
 - hexo generate
