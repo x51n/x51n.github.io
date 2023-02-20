@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width">
+<meta name="theme-color" content="#222"><meta name="generator" content="Hexo 6.3.0">
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" integrity="sha256-Z1K5uhUaJXA7Ll0XrZ/0JhX4lAtZFpT6jkKrEDT0drU=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.1.1/animate.min.css" integrity="sha256-PR7ttpcvz8qrF57fur/yAx1qXMFJeJFiA6pSzWi0OIE=" crossorigin="anonymous">
+
+<script class="next-config" data-name="main" type="application/json">{"hostname":"x51n.github.io","root":"/","images":"/images","scheme":"Muse","darkmode":false,"version":"8.14.2","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":{"enable":false,"style":null},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"}}</script><script src="/js/config.js"></script>
+
+    <meta name="description" content="Here&#39;s something encrypted, password is required to continue reading.">
+<meta property="og:type" content="article">
+<meta property="og:title" content="socks5 代理- DANTE 一键安装脚本">
+<meta property="og:url" content="https://x51n.github.io/2019/03/21/2019-03-21-socks5%20%E4%BB%A3%E7%90%86-DANTE%20%E4%B8%80%E9%94%AE%E5%AE%89%E8%A3%85%E8%84%9A%E6%9C%AC/index.html">
+<meta property="og:site_name" content="技术存档笔记咯">
+<meta property="og:description" content="Here&#39;s something encrypted, password is required to continue reading.">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2019-03-21T11:02:28.000Z">
+<meta property="article:modified_time" content="2023-02-20T17:19:43.571Z">
+<meta property="article:author" content="x51n">
+<meta name="twitter:card" content="summary">
+
+
+<link rel="canonical" href="https://x51n.github.io/2019/03/21/2019-03-21-socks5%20%E4%BB%A3%E7%90%86-DANTE%20%E4%B8%80%E9%94%AE%E5%AE%89%E8%A3%85%E8%84%9A%E6%9C%AC/">
+
+
+
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-CN","comments":true,"permalink":"https://x51n.github.io/2019/03/21/2019-03-21-socks5%20%E4%BB%A3%E7%90%86-DANTE%20%E4%B8%80%E9%94%AE%E5%AE%89%E8%A3%85%E8%84%9A%E6%9C%AC/","path":"2019/03/21/2019-03-21-socks5 代理-DANTE 一键安装脚本/","title":"socks5 代理- DANTE 一键安装脚本"}</script>
+
+<script class="next-config" data-name="calendar" type="application/json">""</script>
+<title>socks5 代理- DANTE 一键安装脚本 | 技术存档笔记咯</title>
+  
+
+
+
+
+
+
+
+
+  <noscript>
+    <link rel="stylesheet" href="/css/noscript.css">
+  </noscript>
+<!-- hexo injector head_end start -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css">
+<!-- hexo injector head_end end --></head>
+
+<body itemscope itemtype="http://schema.org/WebPage" class="use-motion">
+  <div class="headband"></div>
+
+  <main class="main">
+    <div class="column">
+      <header class="header" itemscope itemtype="http://schema.org/WPHeader"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏" role="button">
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <i class="logo-line"></i>
+      <p class="site-title">技术存档笔记咯</p>
+      <i class="logo-line"></i>
+    </a>
+      <p class="site-subtitle" itemprop="description">人生很南，也很靠北，所以才会想东想西...</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger" aria-label="搜索" role="button">
+    </div>
+  </div>
+</div>
+
+
+
+
+
+
+
+</header>
+        
+  
+  <aside class="sidebar">
+
+    <div class="sidebar-inner sidebar-overview-active">
+      <ul class="sidebar-nav">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <div class="sidebar-panel-container">
+        <!--noindex-->
+        <div class="post-toc-wrap sidebar-panel">
+        </div>
+        <!--/noindex-->
+
+        <div class="site-overview-wrap sidebar-panel">
+          <div class="site-author animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <p class="site-author-name" itemprop="name">x51n</p>
+  <div class="site-description" itemprop="description"></div>
+</div>
+<div class="site-state-wrap animated">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+        <a href="/archives/">
+          <span class="site-state-item-count">54</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+          <a href="/categories/">
+        <span class="site-state-item-count">12</span>
+        <span class="site-state-item-name">分类</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+          <a href="/tags/">
+        <span class="site-state-item-count">42</span>
+        <span class="site-state-item-name">标签</span></a>
+      </div>
+  </nav>
+</div>
+
+        </div>
+      </div>
+    </div>
+
+    
+  </aside>
+
+
+    </div>
+
+    <div class="main-inner post posts-expand">
+
+
+  
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://x51n.github.io/2019/03/21/2019-03-21-socks5%20%E4%BB%A3%E7%90%86-DANTE%20%E4%B8%80%E9%94%AE%E5%AE%89%E8%A3%85%E8%84%9A%E6%9C%AC/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="x51n">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="技术存档笔记咯">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="socks5 代理- DANTE 一键安装脚本 | 技术存档笔记咯">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          socks5 代理- DANTE 一键安装脚本
+        </h1>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+
+      <time title="创建时间：2019-03-21 19:02:28" itemprop="dateCreated datePublished" datetime="2019-03-21T19:02:28+08:00">2019-03-21</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">更新于</span>
+      <time title="修改时间：2023-02-21 01:19:43" itemprop="dateModified" datetime="2023-02-21T01:19:43+08:00">2023-02-21</time>
+    </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+        <div class="hbe hbe-container" id="hexo-blog-encrypt" data-wpm="Oh, this is an invalid password. Check and try again, please." data-whm="OOPS, these decrypted content may changed, but you can still have a look.">
+  <script id="hbeData" type="hbeData" data-hmacdigest="5dde2db3e59b5b5bfd21a3aabb03a6b962f44444c4410a62b7df9acdaaca15af">740124e0532095735a7d5f0382cb27d0e194612d0ef77bbe2cc8d377466ffad7a3f36469997e4cb7b422cc5cf05b78ee12e7d3ee85876c7649ea1c33f3cb7628ac0091765bc65f0b40a7dc989bc577e152d09593a251f025a482e6a1c777e8a87bef230598c7c9e8266459a07dbafaf32f353e5b325bd1c42f490cdc6b1328488dd407a131b5d12b37860a5d99f5286491950ddfc1dc5337061168ebf36a6243e8e4aea63090d1b001b3ba7896369dc121fbec18774daf021762194a9a24b6f1a4055a3108866c7c2babe2cf7f03e1a4b1656cc045abd46748d7b4f6a8bf9924dd61b5d47593a289ae9e10be750039a9a772cc9f4efb727d737b8bb85ef89b3e95684f864505efb5f77e2eb4d3ee7dbbe7ef307419799a16de0e82da9164188ea26d3e6ba4ae52f761b77b5e352746cc6093b64c159f86bf5e42f35eb46ae6b3fae3fef6d3874e57629579618fddd4cfe8ecf1e1a40483917417270adaff0f0642e28e4a54679cdb3a99b09e057a8b230abe94574f7d2af1f4e49e21d35aca0c657e3b0f758d337d8a41fb51184262bd152cde96800632f6342b26d48628d2c81547d39b28b41ba09f04da437e03b30e63bc035ebe082ac0a3a586f1568c202f82afe807249397c8268f0ed6bf3f6345b42dd4a8244e71d2124baf6eccb8ec86b43c74f3d7ce0d3dda292f4dd1adbb27b622864c39224dcd4e73b5b2a98ba303d65be718eb5cb9ffbd45f53dc3fa7de17c8f12fda9bb8dac3cc56437eb90727df8609842289af223fcecff0b00cb5d1b6a612b17287792fe2b6e7e5262463e2b38a15f81ac7de032f2c8173315fe5e395a825b35a17f225e860f96abc9e386f37641dc60249eeba825341db6fd984f25e611e792411060fd652fdd00f7597caf17fed4235e3c140e2e471a163c2ca209f8b26ac79550f03d6e0da627cb48564ee8e1284c05fe50f0164afc4cfb0839c71752801a5161d206be116c68da89300de895b6a1d5c847eedb0ce08d614e838a4be8e2533c466c705430ec6381957d5cb331fb4769b6b160c3df1afe3a698ee7b39aecbad0ea4e5b09b6f49f21c0def36afd75860171b1a642d5d74433420c95a5b871fd55f23741e3091238c008cbcb2d01996e82b79e4f24d696429b8f2502bda070fad9741d9a47ed01e1e10f5ee1f9a1fe28fe36670a448a27dbae08b551fa4d63375728b490d9fb3dd5cf4bb7b182ec8456d9c424e725c737e81e6459100f456618594d4bc7ce5b4bb2a42dce17</script>
+  <div class="hbe hbe-content">
+    <div class="hbe hbe-input hbe-input-default">
+      <input class="hbe hbe-input-field hbe-input-field-default" type="password" id="hbePass">
+      <label class="hbe hbe-input-label hbe-input-label-default" for="hbePass">
+        <span class="hbe hbe-input-label-content hbe-input-label-content-default">Hey, password is required here.</span>
+      </label>
+    </div>
+  </div>
+</div>
+<script data-pjax src="/lib/hbe.js"></script><link href="/css/hbe.style.css" rel="stylesheet" type="text/css">
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-item">
+                <a href="/2019/03/20/2019-03-20-%E8%AE%B0%E4%B8%80%E6%AC%A1ssh%E6%9C%8D%E5%8A%A1%E6%8C%82%E6%8E%89%E8%A7%A3%E5%86%B3/" rel="prev" title="记一次ssh服务挂掉解决">
+                  <i class="fa fa-chevron-left"></i> 记一次ssh服务挂掉解决
+                </a>
+            </div>
+            <div class="post-nav-item">
+                <a href="/2019/03/21/2019-03-21-Linux%E4%B8%8B%E7%9A%84%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/" rel="next" title="Linux下的常用命令">
+                  Linux下的常用命令 <i class="fa fa-chevron-right"></i>
+                </a>
+            </div>
+          </div>
+    </footer>
+  </article>
+</div>
+
+
+
+
+
+
+</div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+
+
+<div class="copyright">
+  &copy; 
+  <span itemprop="copyrightYear">2023</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">x51n</span>
+</div>
+  <div class="powered-by">由 <a href="https://hexo.io/" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/muse/" rel="noopener" target="_blank">NexT.Muse</a> 强力驱动
+  </div>
+
+    </div>
+  </footer>
+
+  
+  <div class="toggle sidebar-toggle" role="button">
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+  </div>
+  <div class="sidebar-dimmer"></div>
+  <div class="back-to-top" role="button" aria-label="返回顶部">
+    <i class="fa fa-arrow-up fa-lg"></i>
+    <span>0%</span>
+  </div>
+
+<noscript>
+  <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
+</noscript>
+
+
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js" integrity="sha256-XL2inqUJaslATFnHdJOi9GfQ60on8Wx1C2H8DYiN1xY=" crossorigin="anonymous"></script>
+<script src="/js/comments.js"></script><script src="/js/utils.js"></script><script src="/js/motion.js"></script><script src="/js/schemes/muse.js"></script><script src="/js/next-boot.js"></script>
+
+  
+
+
+
+
+  
+
+
+
+
+
+<script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"log":false,"model":{"jsonPath":"/live2dw/assets/wanko.model.json"},"display":{"position":"right","width":75,"height":150},"mobile":{"show":true}});</script></body>
+</html>

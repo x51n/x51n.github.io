@@ -1,0 +1,422 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width">
+<meta name="theme-color" content="#222"><meta name="generator" content="Hexo 6.3.0">
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" integrity="sha256-Z1K5uhUaJXA7Ll0XrZ/0JhX4lAtZFpT6jkKrEDT0drU=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.1.1/animate.min.css" integrity="sha256-PR7ttpcvz8qrF57fur/yAx1qXMFJeJFiA6pSzWi0OIE=" crossorigin="anonymous">
+
+<script class="next-config" data-name="main" type="application/json">{"hostname":"x51n.github.io","root":"/","images":"/images","scheme":"Muse","darkmode":false,"version":"8.14.2","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":{"enable":false,"style":null},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"}}</script><script src="/js/config.js"></script>
+
+    <meta name="description" content="1. 安装依赖1sudo apt-get install automake  autotools-dev binutils bzip2 elfutils expat gawk gcc gcc-multilib g++-multilib lib32ncurses5 lib32z1 ksh less libmotif-dev lib32z1 libaio1 libaio-dev libc6-dev l">
+<meta property="og:type" content="article">
+<meta property="og:title" content="ORACLE数据库安装过程">
+<meta property="og:url" content="https://x51n.github.io/2019/07/01/2019-07-01-ORACLE%E6%95%B0%E6%8D%AE%E5%BA%93%E5%AE%89%E8%A3%85%E8%BF%87%E7%A8%8B/index.html">
+<meta property="og:site_name" content="技术存档笔记咯">
+<meta property="og:description" content="1. 安装依赖1sudo apt-get install automake  autotools-dev binutils bzip2 elfutils expat gawk gcc gcc-multilib g++-multilib lib32ncurses5 lib32z1 ksh less libmotif-dev lib32z1 libaio1 libaio-dev libc6-dev l">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2019-07-01T01:47:34.000Z">
+<meta property="article:modified_time" content="2023-02-20T17:19:43.571Z">
+<meta property="article:author" content="x51n">
+<meta property="article:tag" content="数据库">
+<meta property="article:tag" content="ORACLE">
+<meta name="twitter:card" content="summary">
+
+
+<link rel="canonical" href="https://x51n.github.io/2019/07/01/2019-07-01-ORACLE%E6%95%B0%E6%8D%AE%E5%BA%93%E5%AE%89%E8%A3%85%E8%BF%87%E7%A8%8B/">
+
+
+
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-CN","comments":true,"permalink":"https://x51n.github.io/2019/07/01/2019-07-01-ORACLE%E6%95%B0%E6%8D%AE%E5%BA%93%E5%AE%89%E8%A3%85%E8%BF%87%E7%A8%8B/","path":"2019/07/01/2019-07-01-ORACLE数据库安装过程/","title":"ORACLE数据库安装过程"}</script>
+
+<script class="next-config" data-name="calendar" type="application/json">""</script>
+<title>ORACLE数据库安装过程 | 技术存档笔记咯</title>
+  
+
+
+
+
+
+
+
+
+  <noscript>
+    <link rel="stylesheet" href="/css/noscript.css">
+  </noscript>
+<!-- hexo injector head_end start -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css">
+<!-- hexo injector head_end end --></head>
+
+<body itemscope itemtype="http://schema.org/WebPage" class="use-motion">
+  <div class="headband"></div>
+
+  <main class="main">
+    <div class="column">
+      <header class="header" itemscope itemtype="http://schema.org/WPHeader"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏" role="button">
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <i class="logo-line"></i>
+      <p class="site-title">技术存档笔记咯</p>
+      <i class="logo-line"></i>
+    </a>
+      <p class="site-subtitle" itemprop="description">人生很南，也很靠北，所以才会想东想西...</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger" aria-label="搜索" role="button">
+    </div>
+  </div>
+</div>
+
+
+
+
+
+
+
+</header>
+        
+  
+  <aside class="sidebar">
+
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
+      <ul class="sidebar-nav">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <div class="sidebar-panel-container">
+        <!--noindex-->
+        <div class="post-toc-wrap sidebar-panel">
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#1-%E5%AE%89%E8%A3%85%E4%BE%9D%E8%B5%96"><span class="nav-number">1.</span> <span class="nav-text">1. 安装依赖</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-%E6%A3%80%E6%B5%8B%E7%B3%BB%E7%BB%9F%E5%8F%98%E9%87%8F"><span class="nav-number">2.</span> <span class="nav-text">2. 检测系统变量</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#3-%E5%88%9B%E5%BB%BA%E7%94%A8%E6%88%B7%E7%BB%84%E5%92%8C%E7%94%A8%E6%88%B7"><span class="nav-number">3.</span> <span class="nav-text">3. 创建用户组和用户</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#4-%E5%88%9B%E5%BB%BA%E8%BD%AF%E4%BB%B6%E5%AE%89%E8%A3%85%E7%9B%AE%E5%BD%95"><span class="nav-number">4.</span> <span class="nav-text">4. 创建软件安装目录</span></a></li></ol></div>
+        </div>
+        <!--/noindex-->
+
+        <div class="site-overview-wrap sidebar-panel">
+          <div class="site-author animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <p class="site-author-name" itemprop="name">x51n</p>
+  <div class="site-description" itemprop="description"></div>
+</div>
+<div class="site-state-wrap animated">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+        <a href="/archives/">
+          <span class="site-state-item-count">54</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+          <a href="/categories/">
+        <span class="site-state-item-count">12</span>
+        <span class="site-state-item-name">分类</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+          <a href="/tags/">
+        <span class="site-state-item-count">42</span>
+        <span class="site-state-item-name">标签</span></a>
+      </div>
+  </nav>
+</div>
+
+        </div>
+      </div>
+    </div>
+
+    
+  </aside>
+
+
+    </div>
+
+    <div class="main-inner post posts-expand">
+
+
+  
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://x51n.github.io/2019/07/01/2019-07-01-ORACLE%E6%95%B0%E6%8D%AE%E5%BA%93%E5%AE%89%E8%A3%85%E8%BF%87%E7%A8%8B/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="x51n">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="技术存档笔记咯">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="ORACLE数据库安装过程 | 技术存档笔记咯">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          ORACLE数据库安装过程
+        </h1>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+
+      <time title="创建时间：2019-07-01 09:47:34" itemprop="dateCreated datePublished" datetime="2019-07-01T09:47:34+08:00">2019-07-01</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">更新于</span>
+      <time title="修改时间：2023-02-21 01:19:43" itemprop="dateModified" datetime="2023-02-21T01:19:43+08:00">2023-02-21</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分类于</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/%E6%9C%AA%E5%BD%92%E7%B1%BB/" itemprop="url" rel="index"><span itemprop="name">未归类</span></a>
+        </span>
+    </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+        <h4 id="1-安装依赖"><a href="#1-安装依赖" class="headerlink" title="1. 安装依赖"></a>1. 安装依赖</h4><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo apt-get install automake  autotools-dev binutils bzip2 elfutils expat gawk gcc gcc-multilib g++-multilib lib32ncurses5 lib32z1 ksh less libmotif-dev lib32z1 libaio1 libaio-dev libc6-dev libc6-dev-i386 libc6-i386  libelf-dev libltdl-dev libxm4:i386 libuil4:i386 libmrm4:i386 libxm4 libuil4 libmrm4 libmotif-common libodbcinstq4-1 libodbcinstq4-1:i386 libpth-dev  libpthread-stubs0-dev libstdc++5 lsb lsb-core make openssh-server  mksh rlwrap rpm sysstat unixodbc unixodbc-dev unzip x11-utils zlibc</span><br></pre></td></tr></table></figure>
+
+<p>手动安装以下安装包：</p>
+<p> lesstif2 暂时忽略</p>
+<p>对于 <code>libpthread-stubs0</code> 包</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">sudo su</span><br><span class="line">echo &#x27;deb http://cz.archive.ubuntu.com/ubuntu precise main universe&#x27; &gt;&gt; /etc/apt/sources.list.d/extra.list</span><br><span class="line">apt-get update</span><br><span class="line">apt-get install libpthread-stubs0</span><br><span class="line">mv /etc/apt/sources.list.d/extra.list /etc/apt/sources.list.d/extra.list.backup</span><br><span class="line">apt-get update</span><br><span class="line">exit</span><br></pre></td></tr></table></figure>
+
+
+
+<h4 id="2-检测系统变量"><a href="#2-检测系统变量" class="headerlink" title="2. 检测系统变量"></a>2. 检测系统变量</h4><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">sudo /sbin/sysctl -a | grep sem </span><br><span class="line">sudo /sbin/sysctl -a | grep shm </span><br><span class="line">sudo /sbin/sysctl -a | grep file-max </span><br><span class="line">sudo /sbin/sysctl -a | grep aio-max </span><br><span class="line">sudo /sbin/sysctl -a | grep ip_local_port_range </span><br><span class="line">sudo /sbin/sysctl -a | grep rmem_default </span><br><span class="line">sudo /sbin/sysctl -a | grep rmem_max </span><br><span class="line">sudo /sbin/sysctl -a | grep wmem_default </span><br><span class="line">sudo /sbin/sysctl -a | grep wmem_max </span><br></pre></td></tr></table></figure>
+
+<p>然后根据上面命令中得到的参数值在&#x2F;etc&#x2F;sysctl.conf中增加对应数据</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo vim /etc/sysctl.conf</span><br></pre></td></tr></table></figure>
+
+<p>把sysctl.conf中的以下内容用查得的值填上</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">fs.aio-max-nr = ？ </span><br><span class="line">fs.file-max = ？ </span><br><span class="line">kernel.shmall = ？ </span><br><span class="line">kernel.shmmax = ？ </span><br><span class="line">kernel.shmmni = ？ </span><br><span class="line">kernel.sem = ？ </span><br><span class="line">net.ipv4.ip_local_port_range = ？ </span><br><span class="line">net.core.rmem_default = ？ </span><br><span class="line">net.core.rmem_max = ？ </span><br><span class="line">net.core.wmem_default = ？ </span><br><span class="line">net.core.wmem_max = ？</span><br></pre></td></tr></table></figure>
+
+<p>运行一下命令更新内核参数：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo sysctl -p  </span><br></pre></td></tr></table></figure>
+
+<p>修改安装Oracle的用户的资源限制</p>
+<p>对于Ubuntu 16.04.2 LTS仅需添加下面的内容：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">root@dbserver:~# vi /etc/security/limits.conf</span><br><span class="line">oracle hard nproc 16384</span><br><span class="line">oracle soft stack 10240</span><br><span class="line">oracle hard stack 32768</span><br><span class="line">oracle soft memlock 3145728</span><br><span class="line">oracle hard memlock 3145728</span><br></pre></td></tr></table></figure>
+
+<h4 id="3-创建用户组和用户"><a href="#3-创建用户组和用户" class="headerlink" title="3. 创建用户组和用户"></a>3. 创建用户组和用户</h4><p>创建oinstall、dba、oper用户组和oracle用户：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">root@dbserver:~# groupadd oinstall</span><br><span class="line">root@dbserver:~# groupadd dba</span><br><span class="line">root@dbserver:~# groupadd oper</span><br><span class="line">root@dbserver:~# useradd -g oinstall -G dba,oper oracle</span><br><span class="line">root@dbserver:~# passwd oracle</span><br><span class="line">Enter new UNIX password:</span><br><span class="line">Retype new UNIX password:</span><br><span class="line">passwd: password updated successfully</span><br><span class="line">//Ubuntu下需要手动创建主目录：</span><br><span class="line">root@dbserver:~# mkdir /home/oracle</span><br><span class="line">root@dbserver:~# chown oracle:oinstall ~oracle</span><br></pre></td></tr></table></figure>
+
+<p>检查umask变量，使用oracle用户登录：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">root@dbserver:~# su - oracle</span><br><span class="line"># su - oracle</span><br><span class="line">$ umask</span><br><span class="line">0022</span><br><span class="line">//确保umask=022，否则修改.bash_profile添加如下行：</span><br><span class="line">$ vi ~/.profile</span><br><span class="line">umask 0022</span><br></pre></td></tr></table></figure>
+
+<h4 id="4-创建软件安装目录"><a href="#4-创建软件安装目录" class="headerlink" title="4. 创建软件安装目录"></a>4. 创建软件安装目录</h4><p>创建ORACLE_BASE并授权：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">root@dbserver:~# mkdir -p /u01/app/</span><br><span class="line">root@dbserver:~# chown -R oracle:oinstall /u01</span><br><span class="line">root@dbserver:~# chmod -R 775 /u01</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">#oracle安装目录，本步创建的文件夹</span><br><span class="line">export ORACLE_BASE=/u01/app/oracle</span><br><span class="line">#网上说可以随便写</span><br><span class="line">export ORACLE_HOME=$ORACLE_BASE/product/11.2.0/dbhome_1</span><br><span class="line">#数据库的sid</span><br><span class="line">export ORACLE_SID=orcl</span><br><span class="line">export ORACLE_UNQNAME=orcl</span><br><span class="line">#默认字符集</span><br><span class="line">export NLS_LANG=.AL32UTF8</span><br><span class="line">#环境变量</span><br><span class="line">export PATH=$&#123;PATH&#125;:$&#123;ORACLE_HOME&#125;/bin/:$ORACLE_HOME/lib64;</span><br></pre></td></tr></table></figure>
+
+<ol>
+<li>关于oracle图形化安装过程中出现的黑色竖线的处理办法</li>
+</ol>
+<p>默认我们安装的时候都是: .&#x2F;runInstaller 也就是直接运行安装文件，但是这种默认安装的方式就会出现上述错误，为了避免上述情况出现可以通过指定参数安装：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">./runInstaller -jreLoc /usr/lib/jvm/jdk1.8.0_211</span><br></pre></td></tr></table></figure>
+
+
+
+<p>链接一下</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">sudo mkdir /usr/lib64 </span><br><span class="line">sudo ln -s /etc /etc/rc.d </span><br><span class="line">sudo ln -s /lib/x86_64-linux-gnu/libgcc_s.so.1 /lib64/ </span><br><span class="line">sudo ln -s /usr/bin/awk /bin/awk </span><br><span class="line">sudo ln -s /usr/bin/basename /bin/basename </span><br><span class="line">sudo ln -s /usr/bin/rpm /bin/rpm </span><br><span class="line">sudo ln -s /usr/lib/x86_64-linux-gnu/libc_nonshared.a /usr/lib64/libc_nonshared.a </span><br><span class="line">sudo ln -s /usr/lib/x86_64-linux-gnu/libpthread_nonshared.a /usr/lib64/libpthread_nonshared.a </span><br><span class="line">sudo ln -s /usr/lib/x86_64-linux-gnu/libstdc++.so.6 /lib64/ </span><br><span class="line">sudo ln -s /usr/lib/x86_64-linux-gnu/libstdc++.so.6 /usr/lib64/ </span><br><span class="line">echo &#x27;Red Hat Linux release 5&#x27; &gt; /etc/redhat-release</span><br></pre></td></tr></table></figure>
+
+<p>环境变量</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">#oracle安装目录，第5步创建的文件夹</span><br><span class="line">export ORACLE_BASE=/u01/app/oracle</span><br><span class="line">#网上说可以随便写</span><br><span class="line">export ORACLE_HOME=$ORACLE_BASE/product/11.2.0/dbhome_1</span><br><span class="line">#数据库的sid</span><br><span class="line">export ORACLE_SID=orcl</span><br><span class="line">export ORACLE_UNQNAME=orcl</span><br><span class="line">#默认字符集</span><br><span class="line">export NLS_LANG=.AL32UTF8</span><br><span class="line">#环境变量</span><br><span class="line">export PATH=$&#123;PATH&#125;:$&#123;ORACLE_HOME&#125;/bin/:$ORACLE_HOME/lib64;</span><br></pre></td></tr></table></figure>
+
+
+
+<p>错误1：Error in invoking target ‘client_sharedlib’ of makefile ‘&#x2F;u01&#x2F;app&#x2F;oracle&#x2F;product&#x2F;11.2.0&#x2F;dbhome_1&#x2F;rdbms&#x2F;lib&#x2F;ins_rdbms.mk’.</p>
+<p>打开日志文件，查找出错原因</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">root@dbserver:~# find /usr -name libpthread_nonshared.a</span><br><span class="line">/usr/lib/x86_64-linux-gnu/libpthread_nonshared.a</span><br><span class="line">root@dbserver:~# ln -s /usr/lib/x86_64-linux-gnu/libpthread_nonshared.a /usr/lib64/libpthread_nonshared.a</span><br></pre></td></tr></table></figure>
+
+<p>错误2：　lib&#x2F;&#x2F;libagtsh.so: undefined reference to &#96;nnfyboot’ in make: rdbms&#x2F;lib&#x2F;dg4odbc] Error 1</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">sudo ln -sf /bin/bash /bin/sh</span><br><span class="line">sudo ln -s /usr/bin/awk /bin/awk</span><br><span class="line">sudo ln -s /usr/bin/rpm /bin/rpm </span><br><span class="line">sudo ln -s /usr/bin/basename /bin/basename</span><br><span class="line"></span><br><span class="line">cd $ORACLE_HOME/lib</span><br><span class="line">ln -s libclient11.a libagtsh.a</span><br><span class="line">$ORACLE_HOME/bin/genagtsh $ORACLE_HOME/lib/libagtsh.so 1.0</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<p>错误3：libstdc++.so.5: undefined reference to &#96;<a href="mailto:&#109;&#x65;&#109;&#99;&#x70;&#x79;&#64;&#71;&#76;&#73;&#66;&#67;&#95;&#50;&#46;&#49;&#x34;">&#109;&#x65;&#109;&#99;&#x70;&#x79;&#64;&#71;&#76;&#73;&#66;&#67;&#95;&#50;&#46;&#49;&#x34;</a>‘</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">这是因为ubuntu 13.04带的libstdc++5.0 和oracle所要不兼容所致</span><br><span class="line"></span><br><span class="line">从这里 ftp://rpmfind.net/linux/Mandriva/official/2010.0/x86_64/media/contrib/release/libstdc++5-3.3.6-4mdv2009.0.x86_64.rpm 下载，</span><br><span class="line">直接安压缩包打开提取，并提取到/usr/lib/x86_64-linux-gnu，然后重试就可以了</span><br></pre></td></tr></table></figure>
+
+<p>错误4 ：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">/u01/app/oracle/product/11.2.0/dbhome_1/sysman/lib//libnmectl.a(nmectlt.o): In function `nmectlt_genSudoProps&#x27;:</span><br><span class="line">nmectlt.c:(.text+0x76): undefined reference to `B_DestroyKeyObject&#x27;</span><br><span class="line">nmectlt.c:(.text+0x7f): undefined reference to `B_DestroyKeyObject&#x27;</span><br><span class="line">nmectlt.c:(.text+0x88): undefined reference to `B_DestroyKeyObject&#x27;</span><br><span class="line">nmectlt.c:(.text+0x91): undefined reference to `B_DestroyKeyObject&#x27;</span><br></pre></td></tr></table></figure>
+
+<p>解决办法：修改“emdctl”的编译参数，编辑“&#x2F;u01&#x2F;app&#x2F;oracle&#x2F;product&#x2F;11.2.0&#x2F;dbhome_1&#x2F;sysman&#x2F;lib&#x2F;ins_emagent.mk”文件，将</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sed -i &#x27;s/^(\s$(MK_EMAGENT_NMECTL))\s$/\1 -lnnz11/g&#x27; $ORACLE_HOME/sysman/lib/ins_emagent.mk</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">171 #===========================</span><br><span class="line">172 # emdctl</span><br><span class="line">173 #===========================</span><br><span class="line">174</span><br><span class="line">175 $(SYSMANBIN)emdctl:</span><br><span class="line">176 $(MK_EMAGENT_NMECTL)</span><br></pre></td></tr></table></figure>
+
+<p>改为：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">171 #===========================</span><br><span class="line">172 # emdctl</span><br><span class="line">173 #===========================</span><br><span class="line">174</span><br><span class="line">175 $(SYSMANBIN)emdctl:</span><br><span class="line">176 $(MK_EMAGENT_NMECTL) -lnnz11</span><br></pre></td></tr></table></figure>
+
+<p>错误5：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">kdxd4.c:(text.hot+0x2587): undefined reference to `lnxren&#x27;</span><br><span class="line">collect2: error: ld returned 1 exit status</span><br><span class="line"></span><br><span class="line">INFO: /u01/app/oracle/product/11.2.0/dbhome_1/bin/genorasdksh: Failed to link liborasdk.so.11.1</span><br></pre></td></tr></table></figure>
+
+<p>解决：</p>
+<p>直接修改“&#x2F;u01&#x2F;app&#x2F;oracle&#x2F;product&#x2F;11.2.0&#x2F;dbhome_1&#x2F;bin&#x2F;genorasdksh”文件，将</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">289 $LD $LD_RUNTIME $LD_OPT $LD_OUT $LD_SELF_CONTAINED $BASE_LIB \</span><br><span class="line">290 $LD_OBJS $LD_SYMS $OLIBS $SYSLIBS $USRLIBS</span><br></pre></td></tr></table></figure>
+<p>改为</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">289 $LD $LD_RUNTIME $LD_OPT -Wl,--no-as-needed $LD_OUT $LD_SELF_CONTAINED $BASE_LIB \</span><br><span class="line">290 $LD_OBJS $LD_SYMS $OLIBS $SYSLIBS $USRLIBS</span><br></pre></td></tr></table></figure>
+
+<p>安装完成后，执行Root Scripts。<br>执行orainstRoot.sh：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">root@dbserver:~# /u01/app/oraInventory/orainstRoot.sh</span><br></pre></td></tr></table></figure>
+
+<p>错误7：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">libhasgen11.so: undefined reference to `procr_get_last_error&#x27;</span><br></pre></td></tr></table></figure>
+
+<p>解决：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sed -i &#x27;s/^\(\s*\)\(\$(OCRLIBS_DEFAULT)\)/\1  -Wl,--no-as-needed \2/g&#x27; /u01/app/oracle/product/11.2.0/dbhome_1/srvm/lib/ins_srvm.mk</span><br></pre></td></tr></table></figure>
+
+<p>错误8：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">nsglsn.c:(.text+0xc29): undefined reference to `ons_subscriber_close</span><br></pre></td></tr></table></figure>
+
+<p>解决：</p>
+<p>sed -i ‘s&#x2F;^(TNSLSNR_LINKLINE.*$(TNSLSNR_OFILES)) ($(LINKTTLIBS))&#x2F;\1 -Wl,–no-as-needed \2&#x2F;g’ &#x2F;u01&#x2F;app&#x2F;oracle&#x2F;product&#x2F;11.2.0&#x2F;dbhome_1&#x2F;network&#x2F;lib&#x2F;env_network.mk</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">To solve error # libocrutl11.so: undefined reference to `lfifcp&#x27; rdbms/lib/ins_rdbms.mk, enter the commands:</span><br><span class="line">sed -i &#x27;s/^\(ORACLE_LINKLINE.*\$(ORACLE_LINKER)\) \(\$(PL_FLAGS)\)/\1 -Wl,--no-as-needed \2/g&#x27; /u01/app/oracle/product/11.2.0/dbhome_1/rdbms/lib/env_rdbms.mk</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+<blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/%E6%95%B0%E6%8D%AE%E5%BA%93/" rel="tag"># 数据库</a>
+              <a href="/tags/ORACLE/" rel="tag"># ORACLE</a>
+          </div>
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-item">
+                <a href="/2019/06/24/2019-06-24-%E8%BF%90%E8%A1%8CORB-SLAM/" rel="prev" title="运行ORB_SLAM">
+                  <i class="fa fa-chevron-left"></i> 运行ORB_SLAM
+                </a>
+            </div>
+            <div class="post-nav-item">
+                <a href="/2019/07/16/2019-07-16-%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F/" rel="next" title="正则表达式">
+                  正则表达式 <i class="fa fa-chevron-right"></i>
+                </a>
+            </div>
+          </div>
+    </footer>
+  </article>
+</div>
+
+
+
+
+
+
+</div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+
+
+<div class="copyright">
+  &copy; 
+  <span itemprop="copyrightYear">2023</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">x51n</span>
+</div>
+  <div class="powered-by">由 <a href="https://hexo.io/" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/muse/" rel="noopener" target="_blank">NexT.Muse</a> 强力驱动
+  </div>
+
+    </div>
+  </footer>
+
+  
+  <div class="toggle sidebar-toggle" role="button">
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+  </div>
+  <div class="sidebar-dimmer"></div>
+  <div class="back-to-top" role="button" aria-label="返回顶部">
+    <i class="fa fa-arrow-up fa-lg"></i>
+    <span>0%</span>
+  </div>
+
+<noscript>
+  <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
+</noscript>
+
+
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js" integrity="sha256-XL2inqUJaslATFnHdJOi9GfQ60on8Wx1C2H8DYiN1xY=" crossorigin="anonymous"></script>
+<script src="/js/comments.js"></script><script src="/js/utils.js"></script><script src="/js/motion.js"></script><script src="/js/schemes/muse.js"></script><script src="/js/next-boot.js"></script>
+
+  
+
+
+
+
+  
+
+
+
+
+
+<script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"log":false,"model":{"jsonPath":"/live2dw/assets/wanko.model.json"},"display":{"position":"right","width":75,"height":150},"mobile":{"show":true}});</script></body>
+</html>
