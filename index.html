@@ -3,7 +3,8 @@
 <head>
   <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width">
-<meta name="theme-color" content="#222"><meta name="generator" content="Hexo 6.3.0">
+<meta name="theme-color" content="#222" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#222" media="(prefers-color-scheme: dark)"><meta name="generator" content="Hexo 6.3.0">
 
   <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
   <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
@@ -17,7 +18,7 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" integrity="sha256-Z1K5uhUaJXA7Ll0XrZ/0JhX4lAtZFpT6jkKrEDT0drU=" crossorigin="anonymous">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.1.1/animate.min.css" integrity="sha256-PR7ttpcvz8qrF57fur/yAx1qXMFJeJFiA6pSzWi0OIE=" crossorigin="anonymous">
 
-<script class="next-config" data-name="main" type="application/json">{"hostname":"x51n.github.io","root":"/","images":"/images","scheme":"Muse","darkmode":false,"version":"8.14.2","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":{"enable":false,"style":null},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"}}</script><script src="/js/config.js"></script>
+<script class="next-config" data-name="main" type="application/json">{"hostname":"x51n.github.io","root":"/","images":"/images","scheme":"Gemini","darkmode":true,"version":"8.14.2","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":{"enable":false,"style":null},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"}}</script><script src="/js/config.js"></script>
 
     <meta property="og:type" content="website">
 <meta property="og:title" content="技术存档笔记咯">
@@ -60,6 +61,9 @@
       <header class="header" itemscope itemtype="http://schema.org/WPHeader"><div class="site-brand-container">
   <div class="site-nav-toggle">
     <div class="toggle" aria-label="切换导航栏" role="button">
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
     </div>
   </div>
 
@@ -81,6 +85,10 @@
 
 
 
+<nav class="site-nav">
+  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a></li><li class="menu-item menu-item-about"><a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>关于</a></li><li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签</a></li><li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类</a></li><li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档</a></li>
+  </ul>
+</nav>
 
 
 
@@ -108,6 +116,8 @@
 
         <div class="site-overview-wrap sidebar-panel">
           <div class="site-author animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="x51n"
+      src="https://theme-next.js.org/images/logo.svg">
   <p class="site-author-name" itemprop="name">x51n</p>
   <div class="site-description" itemprop="description"></div>
 </div>
@@ -131,6 +141,11 @@
       </div>
   </nav>
 </div>
+  <div class="links-of-author animated">
+      <span class="links-of-author-item">
+        <a href="https://github.com/x51n" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;x51n" rel="noopener me" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
+      </span>
+  </div>
 
         </div>
       </div>
@@ -155,7 +170,7 @@
     <link itemprop="mainEntityOfPage" href="https://x51n.github.io/2019/11/23/2019-11-23-Dynamic-Link-Library-Search-Order/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="image" content="https://theme-next.js.org/images/logo.svg">
       <meta itemprop="name" content="x51n">
     </span>
 
@@ -188,7 +203,7 @@
         <i class="far fa-calendar-check"></i>
       </span>
       <span class="post-meta-item-text">更新于</span>
-      <time title="修改时间：2023-02-21 01:19:43" itemprop="dateModified" datetime="2023-02-21T01:19:43+08:00">2023-02-21</time>
+      <time title="修改时间：2023-02-21 01:37:44" itemprop="dateModified" datetime="2023-02-21T01:37:44+08:00">2023-02-21</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -228,7 +243,14 @@
 <li>The Windows directory. Use the <em>GetWindowsDirectory</em> function to get the path of this directory.</li>
 <li>The directories that are listed in the PATH environment variable. Note that this does not include the per-application path specified by the <strong>App Paths</strong> registry key. The <strong>App Paths</strong> key is not used when computing the DLL search path.</li>
 </ol>
-
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2019/11/23/2019-11-23-Dynamic-Link-Library-Search-Order/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
       
     </div>
 
@@ -257,7 +279,7 @@
     <link itemprop="mainEntityOfPage" href="https://x51n.github.io/2019/09/27/2019-09-28-%E8%BF%9B%E5%88%B6%E8%BD%AC%E6%8D%A2%E4%BB%A3%E7%A0%81/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="image" content="https://theme-next.js.org/images/logo.svg">
       <meta itemprop="name" content="x51n">
     </span>
 
@@ -290,7 +312,7 @@
         <i class="far fa-calendar-check"></i>
       </span>
       <span class="post-meta-item-text">更新于</span>
-      <time title="修改时间：2023-02-21 01:19:43" itemprop="dateModified" datetime="2023-02-21T01:19:43+08:00">2023-02-21</time>
+      <time title="修改时间：2023-02-21 01:37:44" itemprop="dateModified" datetime="2023-02-21T01:37:44+08:00">2023-02-21</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -349,7 +371,7 @@
     <link itemprop="mainEntityOfPage" href="https://x51n.github.io/2019/09/03/2019-09-03-docker%E6%95%99%E7%A8%8B/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="image" content="https://theme-next.js.org/images/logo.svg">
       <meta itemprop="name" content="x51n">
     </span>
 
@@ -382,7 +404,7 @@
         <i class="far fa-calendar-check"></i>
       </span>
       <span class="post-meta-item-text">更新于</span>
-      <time title="修改时间：2023-02-21 01:19:43" itemprop="dateModified" datetime="2023-02-21T01:19:43+08:00">2023-02-21</time>
+      <time title="修改时间：2023-02-21 01:37:44" itemprop="dateModified" datetime="2023-02-21T01:37:44+08:00">2023-02-21</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -408,17 +430,14 @@
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">uname -r</span><br></pre></td></tr></table></figure>
 
 <h5 id="使用脚本安装-Docker"><a href="#使用脚本安装-Docker" class="headerlink" title="使用脚本安装 Docker"></a>使用脚本安装 Docker</h5><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">wget -qO- https://get.docker.com/ | sh</span><br></pre></td></tr></table></figure>
-
-<h5 id="启动-docker-后台服务"><a href="#启动-docker-后台服务" class="headerlink" title="启动 docker 后台服务"></a>启动 docker 后台服务</h5><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">sudo service docker start</span><br><span class="line">docker run hello-world</span><br></pre></td></tr></table></figure>
-
-<h5 id="镜像加速"><a href="#镜像加速" class="headerlink" title="镜像加速"></a>镜像加速</h5><p>编辑&#x2F;etc&#x2F;docker&#x2F;daemon.json</p>
-<blockquote>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">&quot;registry-mirrors&quot;: [&quot;http://hub-mirror.c.163.com&quot;]</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-</blockquote>
-<p>其他安装方法参照<a target="_blank" rel="noopener" href="https://www.runoob.com/docker/ubuntu-docker-install.html">https://www.runoob.com/docker/ubuntu-docker-install.html</a></p>
-<pre><code>
-</code></pre>
-
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2019/09/03/2019-09-03-docker%E6%95%99%E7%A8%8B/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
       
     </div>
 
@@ -447,7 +466,7 @@
     <link itemprop="mainEntityOfPage" href="https://x51n.github.io/2019/07/27/2019-07-27-debootstrap%E5%BB%BA%E7%AB%8B%E6%9C%80%E5%B0%8Fdebian%E7%B3%BB%E7%B3%BB%E7%BB%9F/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="image" content="https://theme-next.js.org/images/logo.svg">
       <meta itemprop="name" content="x51n">
     </span>
 
@@ -480,7 +499,7 @@
         <i class="far fa-calendar-check"></i>
       </span>
       <span class="post-meta-item-text">更新于</span>
-      <time title="修改时间：2023-02-21 01:19:43" itemprop="dateModified" datetime="2023-02-21T01:19:43+08:00">2023-02-21</time>
+      <time title="修改时间：2023-02-21 01:37:44" itemprop="dateModified" datetime="2023-02-21T01:37:44+08:00">2023-02-21</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -507,72 +526,14 @@
 
 <p>使用cfdisk新建磁盘并标记为可启动</p>
 <p>在分区上创建文件系统。例如，在 <code>/dev/sda6</code> 分区(以后的例子中，将把它作为 root 分区)建立一个 ext3 格式的文件系统：</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mkfs.ext4 /dev/sda6</span><br></pre></td></tr></table></figure>
-
-<p>初始化并激活交换分区(请把分区号替换成您希望用作 Debian 交换分区的分区号):</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"># mkswap /dev/sda5</span><br><span class="line"># sync</span><br><span class="line"># swapon /dev/sda5</span><br></pre></td></tr></table></figure>
-
-<p>把一个分区挂载到 <code>/mnt/debinst</code>(这是安装的位置，将来作为您新系统的根(<code>/</code>)文件系统)。挂载点的名称是任意的，后面的步骤将会用到。</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"># mkdir /mnt/debinst</span><br><span class="line"># mount /dev/sda6 /mnt/debinst</span><br></pre></td></tr></table></figure>
-
-<h2 id="0x02-开始安装"><a href="#0x02-开始安装" class="headerlink" title="0x02 开始安装"></a>0x02 开始安装</h2><p>使用下面這行 debootstrap 命令，</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">debootstrap --arch amd64 bionic rootfs-debian http://mirrors.tuna.tsinghua.edu.cn/ubuntu/</span><br></pre></td></tr></table></figure>
-
-<p>整個 debootstrap 的命令架構如下</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">debootstrap --arch &lt;ARCH&gt; &lt;VERSION&gt; &lt;DIRECTORY&gt;  &lt;MIRROR&gt;</span><br></pre></td></tr></table></figure>
-
-<ul>
-<li><p>ARCH</p>
-<p>目標系統的 CPU 架構，常用的有 i386、amd64、armel、armhf 等。</p>
-</li>
-<li><p>VERSION</p>
-<p>Debian 的版本，你可以使用目前的穩定版本 <strong>wheezy</strong> ，或是 永遠的測試版 <strong>sid</strong> ，當然你也可以選擇更不穩定的 <strong>testing</strong> ，詳細版本名 稱請見 Debian 官網。</p>
-</li>
-<li><p>DIRECTORY</p>
-<p>安裝的目錄，這個根據自己的需求設定即可</p>
-</li>
-<li><p>MIRROR</p>
-<p>下載 Debian 套件的伺服器，通常選擇該使用者區域內的服務器，</p>
-</li>
-</ul>
-<p>添加<code>restricted universe multiverse</code>进源</p>
-<h2 id="0x03-创建设备文件"><a href="#0x03-创建设备文件" class="headerlink" title="0x03 创建设备文件"></a>0x03 创建设备文件</h2><p>此时，&#x2F;dev&#x2F; 只含有非常基本的设备文件。安装的后续步骤可能还需要更多的设备文件，所以我们安装 makedev 软件包，并创建默认的静态设备文件，使用(chroot 以后)</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">apt install makedev</span><br><span class="line">mount none /proc -t proc</span><br><span class="line">cd /dev</span><br><span class="line">MAKEDEV generic</span><br></pre></td></tr></table></figure>
-
-<h2 id="0x04-分区的挂载"><a href="#0x04-分区的挂载" class="headerlink" title="0x04 分区的挂载"></a>0x04 分区的挂载</h2><p>首先新建 &#x2F;etc&#x2F;fstab</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">editor /etc/fstab</span><br></pre></td></tr></table></figure>
-
-
-
-<p>然后根据模板修改</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"># /etc/fstab: static file system information.</span><br><span class="line">#</span><br><span class="line"># file system    mount point   type    options                  dump pass</span><br><span class="line">/dev/XXX         /             ext4    defaults                 0    1</span><br><span class="line">/dev/XXX         /boot         ext4    rw,nosuid,nodev          0    2</span><br><span class="line"></span><br><span class="line">/dev/XXX         none          swap    sw                       0    0</span><br><span class="line">proc             /proc         proc    defaults                 0    0</span><br><span class="line"></span><br><span class="line">#/dev/fd0         /media/floppy auto    noauto,rw,sync,user,exec 0    0</span><br><span class="line">#/dev/cdrom       /media/cdrom  iso9660 noauto,ro,user,exec      0    0</span><br><span class="line"></span><br><span class="line">#/dev/XXX         /tmp          ext4    rw,nosuid,nodev          0    2</span><br><span class="line">#/dev/XXX         /var          ext4    rw,nosuid,nodev          0    2</span><br><span class="line">#/dev/XXX         /usr          ext4    rw,nodev                 0    2</span><br><span class="line">#/dev/XXX         /home         ext4    rw,nosuid,nodev          0    2</span><br></pre></td></tr></table></figure>
-
-<p>然后挂载 proc 和sysfs 文件系统</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">mount -t proc proc /proc</span><br><span class="line">mount -t sysfs sysfs /sys</span><br></pre></td></tr></table></figure>
-
-<h2 id="0x05-网络的配置"><a href="#0x05-网络的配置" class="headerlink" title="0x05 网络的配置"></a>0x05 网络的配置</h2><p>需要安装<code>ifupdown</code></p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">apt install ifupdown network-manager</span><br></pre></td></tr></table></figure>
-
-<p>编辑&#x2F;etc&#x2F;network&#x2F;interfaces，下面是模板：</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line">######################################################################</span><br><span class="line"># /etc/network/interfaces -- configuration file for ifup(8), ifdown(8)</span><br><span class="line"># See the interfaces(5) manpage for information on what options are</span><br><span class="line"># available.</span><br><span class="line">######################################################################</span><br><span class="line"></span><br><span class="line"># We always want the loopback interface.</span><br><span class="line">#</span><br><span class="line">auto lo</span><br><span class="line">iface lo inet loopback</span><br><span class="line"></span><br><span class="line"># To use dhcp:</span><br><span class="line">#</span><br><span class="line"># auto eth0</span><br><span class="line"># iface eth0 inet dhcp</span><br><span class="line"></span><br><span class="line"># An example static IP setup: (broadcast and gateway are optional)</span><br><span class="line">#</span><br><span class="line"># auto eth0</span><br><span class="line"># iface eth0 inet static</span><br><span class="line">#     address 192.168.0.42</span><br><span class="line">#     network 192.168.0.0</span><br><span class="line">#     netmask 255.255.255.0</span><br><span class="line">#     broadcast 192.168.0.255</span><br><span class="line">#     gateway 192.168.0.1</span><br></pre></td></tr></table></figure>
-
-<p>然后设定host name</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">echo DebianHostName &gt; /etc/hostname</span><br></pre></td></tr></table></figure>
-
-<h2 id="0x06-安装内核"><a href="#0x06-安装内核" class="headerlink" title="0x06 安装内核"></a>0x06 安装内核</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">apt search linux-image</span><br><span class="line">apt install linux-image-arch-etc</span><br></pre></td></tr></table></figure>
-
-<p>我习惯上把内核头文件也装上，比如我的就是：</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">apt install linux-image-4.9.0-2-amd64 linux-headers-4.9.0-2-amd64</span><br></pre></td></tr></table></figure>
-
-<h2 id="0x07-安装引导程序"><a href="#0x07-安装引导程序" class="headerlink" title="0x07 安装引导程序"></a>0x07 安装引导程序</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">apt install grub-pc</span><br><span class="line">grub-install /dev/sd8</span><br><span class="line">update-grub</span><br></pre></td></tr></table></figure>
-
-<p>设定密码</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">passwd</span><br></pre></td></tr></table></figure>
-
-<hr>
-<p>参考资料</p>
-<p><a target="_blank" rel="noopener" href="https://hosxy.github.io/2017/05/03/debootstrap%E5%AE%89%E8%A3%85debian/">https://hosxy.github.io/2017/05/03/debootstrap%E5%AE%89%E8%A3%85debian/</a><br><a target="_blank" rel="noopener" href="https://www.debian.org/releases/jessie/i386/apds03.html.zh-cn">https://www.debian.org/releases/jessie/i386/apds03.html.zh-cn</a></p>
-
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2019/07/27/2019-07-27-debootstrap%E5%BB%BA%E7%AB%8B%E6%9C%80%E5%B0%8Fdebian%E7%B3%BB%E7%B3%BB%E7%BB%9F/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
       
     </div>
 
@@ -601,7 +562,7 @@
     <link itemprop="mainEntityOfPage" href="https://x51n.github.io/2019/07/26/2019-07-26-App/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="image" content="https://theme-next.js.org/images/logo.svg">
       <meta itemprop="name" content="x51n">
     </span>
 
@@ -634,7 +595,7 @@
         <i class="far fa-calendar-check"></i>
       </span>
       <span class="post-meta-item-text">更新于</span>
-      <time title="修改时间：2023-02-21 01:19:43" itemprop="dateModified" datetime="2023-02-21T01:19:43+08:00">2023-02-21</time>
+      <time title="修改时间：2023-02-21 01:37:44" itemprop="dateModified" datetime="2023-02-21T01:37:44+08:00">2023-02-21</time>
     </span>
 
   
@@ -652,20 +613,14 @@
 <p>2.在打开fiddler的情况下，打开itunes软件，并在itunes store中搜索你想要的app名称。在fiddler 中设置一个断点：</p>
 <p>在fiddler左下角的黑框输入<code>bpu MZBuy.woa</code> 后敲回车，回车后看到右下角的提示就代表断点设置成功</p>
 <p><img src="/2.png" alt="img"></p>
-<p>3.在itunes 中点击下载或获取，回到fiddler可以看到下图红框中所示。</p>
-<p><img src="/3.png" alt="img"></p>
-<p>4.点击pXX-buy.itunse.app这条请求，在右侧Inspectors &gt; TextView中，点击绿色框中的Run to Completion（iTunes就会开始下载应用），再点击下方的黄色小方框Response body is encoded.Click to decode</p>
-<p><img src="/4.png" alt="img"></p>
-<p>5.右击pXX-buy.itunse.app这条请求，依次选择 Save &gt; Response &gt; Response Body ，保存得到xml文件。</p>
-<p><img src="/5.png" alt="img"></p>
-<p>6.打开保存下来xml文件，找到<array></array>标签，被<integer></integer> 标签包裹住的就是每一个版本的版本号。</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&lt;array&gt;</span><br><span class="line">    &lt;integer&gt;3843900&lt;/integer&gt;</span><br><span class="line">    &lt;integer&gt;3876776&lt;/integer&gt;</span><br><span class="line"></span><br><span class="line">&lt;array&gt;</span><br></pre></td></tr></table></figure>
-<p>7.清空Fidder里的请求，再次在底部命令栏中输入bpu MZBuy.woa并回车。返回 iTunes重新下载所需软件，在 Fidder 中找到红色报警选项，在右侧选择 Inspectors &gt; TextView，将自己需要的版本代码替换，并点击下方的 Run To Comlietion，便会下载你指定版本的软件了</p>
-<p><img src="/7.png" alt="img"></p>
-<p>8.通过itools或者pp助手将已下载好的旧版软件安装至手机</p>
-<hr>
-<p>作者：DearMorning<br>来源：CSDN<br>原文：<a target="_blank" rel="noopener" href="https://blog.csdn.net/DearMorning/article/details/80215664">https://blog.csdn.net/DearMorning/article/details/80215664</a><br>版权声明：本文为博主原创文章，转载请附上博文链接！</p>
-
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2019/07/26/2019-07-26-App/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
       
     </div>
 
@@ -694,7 +649,7 @@
     <link itemprop="mainEntityOfPage" href="https://x51n.github.io/2019/07/17/2019-07-17-MATLAB%E6%9B%B4%E6%8D%A2%E7%95%8C%E9%9D%A2%E9%A2%9C%E8%89%B2%E4%B8%BB%E9%A2%98/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="image" content="https://theme-next.js.org/images/logo.svg">
       <meta itemprop="name" content="x51n">
     </span>
 
@@ -727,7 +682,7 @@
         <i class="far fa-calendar-check"></i>
       </span>
       <span class="post-meta-item-text">更新于</span>
-      <time title="修改时间：2023-02-21 01:19:43" itemprop="dateModified" datetime="2023-02-21T01:19:43+08:00">2023-02-21</time>
+      <time title="修改时间：2023-02-21 01:37:44" itemprop="dateModified" datetime="2023-02-21T01:37:44+08:00">2023-02-21</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -781,7 +736,7 @@
     <link itemprop="mainEntityOfPage" href="https://x51n.github.io/2019/07/17/2019-07-17-matlab%E8%BF%9C%E7%A8%8B%E7%99%BB%E5%BD%95license%E9%94%99%E8%AF%AF%E8%A7%A3%E5%86%B3/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="image" content="https://theme-next.js.org/images/logo.svg">
       <meta itemprop="name" content="x51n">
     </span>
 
@@ -814,7 +769,7 @@
         <i class="far fa-calendar-check"></i>
       </span>
       <span class="post-meta-item-text">更新于</span>
-      <time title="修改时间：2023-02-21 01:19:43" itemprop="dateModified" datetime="2023-02-21T01:19:43+08:00">2023-02-21</time>
+      <time title="修改时间：2023-02-21 01:37:44" itemprop="dateModified" datetime="2023-02-21T01:37:44+08:00">2023-02-21</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -871,7 +826,7 @@
     <link itemprop="mainEntityOfPage" href="https://x51n.github.io/2019/07/16/2019-07-16-%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="image" content="https://theme-next.js.org/images/logo.svg">
       <meta itemprop="name" content="x51n">
     </span>
 
@@ -904,7 +859,7 @@
         <i class="far fa-calendar-check"></i>
       </span>
       <span class="post-meta-item-text">更新于</span>
-      <time title="修改时间：2023-02-21 01:19:43" itemprop="dateModified" datetime="2023-02-21T01:19:43+08:00">2023-02-21</time>
+      <time title="修改时间：2023-02-21 01:37:44" itemprop="dateModified" datetime="2023-02-21T01:37:44+08:00">2023-02-21</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -926,384 +881,22 @@
     
     
     <div class="post-body" itemprop="articleBody">
-          <br/>
+          <br>
 <p align="center">
 <img src="https://i.imgur.com/bYwl7Vf.png" alt="Learn Regex">
-</p><br/>
+</p><br>
 
 <h2 id="什么是正则表达式-？"><a href="#什么是正则表达式-？" class="headerlink" title="什么是正则表达式 ？"></a>什么是正则表达式 ？</h2><blockquote>
 <p>正则表达式是一种被用于从文本中检索符合某些特定模式的文本。</p>
 </blockquote>
-<p>正则表达式是从左到右来匹配一个字符串的。”Regular Expression” 这个词太长了，我们通常使用它的缩写 “regex” 或者 “regexp”。<br>正则表达式可以被用来替换字符串中的文本、验证表单、基于模式匹配从一个字符串中提取字符串等等。<br><br /></p>
-<p>想象一下，您正在编写应用程序，并且您希望在用户选择用户名时设置规则。我们希望用户名可以包含字母，数字，下划线和连字符。<br>为了让它看起来不丑，我们还想限制用户名中的字符数量。我们可以使用以下正则表达式来验证用户名:</p>
-<p align="center">
-<img src="https://i.imgur.com/UrDb9qc.png" alt="Regular expression">
-</p>
-
-<p>上面这个正则表达式可以匹配 <code>john_doe</code>，<code>jo-hn\_doe</code> 和 <code>john12\_as</code>。但是它不能匹配 <code>Jo</code>，因为该字符串里面包含了大写字符，并且它太短了。</p>
-<h2 id="目录"><a href="#目录" class="headerlink" title="目录"></a>目录</h2><ul>
-<li><a href="#1-%E5%9F%BA%E6%9C%AC%E5%8C%B9%E9%85%8D">基本匹配</a></li>
-<li><a href="#2-%E5%85%83%E5%AD%97%E7%AC%A6">元字符</a><ul>
-<li><a href="#21-%E8%8B%B1%E6%96%87%E5%8F%A5%E5%8F%B7">英文句号</a></li>
-<li><a href="#22-%E5%AD%97%E7%AC%A6%E9%9B%86">字符集</a><ul>
-<li><a href="#221-%E5%90%A6%E5%AE%9A%E5%AD%97%E7%AC%A6%E9%9B%86">否定字符集</a></li>
-</ul>
-</li>
-<li><a href="#23-%E9%87%8D%E5%A4%8D">重复</a><ul>
-<li><a href="#231-%E6%98%9F%E5%8F%B7">星号</a></li>
-<li><a href="#232-%E5%8A%A0%E5%8F%B7">加号</a></li>
-<li><a href="#233-%E9%97%AE%E5%8F%B7">问号</a></li>
-</ul>
-</li>
-<li><a href="#24-%E8%8A%B1%E6%8B%AC%E5%8F%B7">花括号</a></li>
-<li><a href="#25-%E5%AD%97%E7%AC%A6%E7%BB%84">字符组</a></li>
-<li><a href="#26-%E5%88%86%E6%94%AF%E7%BB%93%E6%9E%84">分支结构</a></li>
-<li><a href="#27-%E8%BD%AC%E4%B9%89%E7%89%B9%E6%AE%8A%E5%AD%97%E7%AC%A6">转义特殊字符</a></li>
-<li><a href="#28-%E5%AE%9A%E4%BD%8D%E7%AC%A6">定位符</a><ul>
-<li><a href="#281-%E6%8F%92%E5%85%A5%E7%AC%A6%E5%8F%B7">插入符号</a></li>
-<li><a href="#282-%E7%BE%8E%E5%85%83%E7%AC%A6%E5%8F%B7">美元符号</a></li>
-</ul>
-</li>
-</ul>
-</li>
-<li><a href="#3-%E7%AE%80%E5%86%99%E5%AD%97%E7%AC%A6%E9%9B%86">简写字符集</a></li>
-<li><a href="#4-%E6%96%AD%E8%A8%80">断言</a><ul>
-<li><a href="#41-%E6%AD%A3%E5%90%91%E5%85%88%E8%A1%8C%E6%96%AD%E8%A8%80">正向先行断言</a></li>
-<li><a href="#42-%E8%B4%9F%E5%90%91%E5%85%88%E8%A1%8C%E6%96%AD%E8%A8%80">负向先行断言</a></li>
-<li><a href="#43-%E6%AD%A3%E5%90%91%E5%90%8E%E8%A1%8C%E6%96%AD%E8%A8%80">正向后行断言</a></li>
-<li><a href="#44-%E8%B4%9F%E5%90%91%E5%90%8E%E8%A1%8C%E6%96%AD%E8%A8%80">负向后行断言</a></li>
-</ul>
-</li>
-<li><a href="#5-%E6%A0%87%E8%AE%B0">标记</a><ul>
-<li><a href="#51-%E4%B8%8D%E5%8C%BA%E5%88%86%E5%A4%A7%E5%B0%8F%E5%86%99">不区分大小写</a></li>
-<li><a href="#52-%E5%85%A8%E5%B1%80%E6%90%9C%E7%B4%A2">全局搜索</a></li>
-<li><a href="#53-%E5%A4%9A%E8%A1%8C%E5%8C%B9%E9%85%8D">多行匹配</a></li>
-</ul>
-</li>
-<li><a href="#%E5%B8%B8%E7%94%A8%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F">常用正则表达式</a></li>
-</ul>
-<h2 id="1-基本匹配"><a href="#1-基本匹配" class="headerlink" title="1. 基本匹配"></a>1. 基本匹配</h2><p>正则表达式只是我们用于在文本中检索字母和数字的模式。例如正则表达式 <code>cat</code>，表示: 字母 <code>c</code> 后面跟着一个字母 <code>a</code>，再后面跟着一个字母 <code>t</code>。</p>
-<pre>
-"cat" => The <a href="#learn-regex"><strong>cat</strong></a> sat on the mat
-</pre>
-
-<p>正则表达式 <code>123</code> 会匹配字符串 “123”。通过将正则表达式中的每个字符逐个与要匹配的字符串中的每个字符进行比较，来完成正则匹配。<br>正则表达式通常区分大小写，因此正则表达式 <code>Cat</code> 与字符串 “cat” 不匹配。</p>
-<pre>
-"Cat" => The cat sat on the <a href="#learn-regex"><strong>Cat</strong></a>
-</pre>
-
-<h2 id="2-元字符"><a href="#2-元字符" class="headerlink" title="2. 元字符"></a>2. 元字符</h2><p>元字符是正则表达式的基本组成元素。元字符在这里跟它通常表达的意思不一样，而是以某种特殊的含义去解释。有些元字符写在方括号内的时候有特殊含义。<br>元字符如下:</p>
-<table>
-<thead>
-<tr>
-<th align="center">元字符</th>
-<th>描述</th>
-</tr>
-</thead>
-<tbody><tr>
-<td align="center">.</td>
-<td>匹配除换行符以外的任意字符。</td>
-</tr>
-<tr>
-<td align="center">[ ]</td>
-<td>字符类，匹配方括号中包含的任意字符。</td>
-</tr>
-<tr>
-<td align="center">[^ ]</td>
-<td>否定字符类。匹配方括号中不包含的任意字符</td>
-</tr>
-<tr>
-<td align="center">*</td>
-<td>匹配前面的子表达式零次或多次</td>
-</tr>
-<tr>
-<td align="center">+</td>
-<td>匹配前面的子表达式一次或多次</td>
-</tr>
-<tr>
-<td align="center">?</td>
-<td>匹配前面的子表达式零次或一次，或指明一个非贪婪限定符。</td>
-</tr>
-<tr>
-<td align="center">{n,m}</td>
-<td>花括号，匹配前面字符至少 n 次，但是不超过 m 次。</td>
-</tr>
-<tr>
-<td align="center">(xyz)</td>
-<td>字符组，按照确切的顺序匹配字符xyz。</td>
-</tr>
-<tr>
-<td align="center">&amp;#124;</td>
-<td>分支结构，匹配符号之前的字符或后面的字符。</td>
-</tr>
-<tr>
-<td align="center">&amp;#92;</td>
-<td>转义符，它可以还原元字符原来的含义，允许你匹配保留字符 <code>[ ] ( ) &#123; &#125; . * + ? ^ $ \ &#124;</code></td>
-</tr>
-<tr>
-<td align="center">^</td>
-<td>匹配行的开始</td>
-</tr>
-<tr>
-<td align="center">$</td>
-<td>匹配行的结束</td>
-</tr>
-</tbody></table>
-<h2 id="2-1-英文句号"><a href="#2-1-英文句号" class="headerlink" title="2.1 英文句号"></a>2.1 英文句号</h2><p>英文句号 <code>.</code> 是元字符的最简单的例子。元字符 <code>.</code> 可以匹配任意单个字符。它不会匹配换行符和新行的字符。例如正则表达式 <code>.ar</code>，表示: 任意字符后面跟着一个字母 <code>a</code>，<br>再后面跟着一个字母 <code>r</code>。</p>
-<pre>
-".ar" => The <a href="#learn-regex"><strong>car</strong></a> <a href="#learn-regex"><strong>par</strong></a>ked in the <a href="#learn-regex"><strong>gar</strong></a>age.
-</pre>
-
-<h2 id="2-2-字符集"><a href="#2-2-字符集" class="headerlink" title="2.2 字符集"></a>2.2 字符集</h2><p>字符集也称为字符类。方括号被用于指定字符集。使用字符集内的连字符来指定字符范围。方括号内的字符范围的顺序并不重要。<br>例如正则表达式 <code>[Tt]he</code>，表示: 大写 <code>T</code> 或小写 <code>t</code> ，后跟字母 <code>h</code>，再后跟字母 <code>e</code>。</p>
-<pre>
-"[Tt]he" => <a href="#learn-regex"><strong>The</strong></a> car parked in <a href="#learn-regex"><strong>the</strong></a> garage.
-</pre>
-
-<p>然而，字符集中的英文句号表示它字面的含义。正则表达式 <code>ar[.]</code>，表示小写字母 <code>a</code>，后面跟着一个字母 <code>r</code>，再后面跟着一个英文句号 <code>.</code> 字符。</p>
-<pre>
-"ar[.]" => A garage is a good place to park a c<a href="#learn-regex"><strong>ar.</strong></a>
-</pre>
-
-<h3 id="2-2-1-否定字符集"><a href="#2-2-1-否定字符集" class="headerlink" title="2.2.1 否定字符集"></a>2.2.1 否定字符集</h3><p>一般来说插入字符 <code>^</code> 表示一个字符串的开始，但是当它在方括号内出现时，它会取消字符集。例如正则表达式 <code>[^c]ar</code>，表示: 除了字母 <code>c</code> 以外的任意字符，后面跟着字符 <code>a</code>，<br>再后面跟着一个字母 <code>r</code>。</p>
-<pre>
-"[^c]ar" => The car <a href="#learn-regex"><strong>par</strong></a>ked in the <a href="#learn-regex"><strong>gar</strong></a>age.
-</pre>
-
-<h2 id="2-3-重复"><a href="#2-3-重复" class="headerlink" title="2.3 重复"></a>2.3 重复</h2><p>以下元字符 <code>+</code>，<code>*</code> 或 <code>?</code> 用于指定子模式可以出现多少次。这些元字符在不同情况下的作用不同。</p>
-<h3 id="2-3-1-星号"><a href="#2-3-1-星号" class="headerlink" title="2.3.1 星号"></a>2.3.1 星号</h3><p>该符号 <code>*</code> 表示匹配上一个匹配规则的零次或多次。正则表达式 <code>a*</code> 表示小写字母 <code>a</code> 可以重复零次或者多次。但是它如果出现在字符集或者字符类之后，它表示整个字符集的重复。<br>例如正则表达式 <code>[a-z]*</code>，表示: 一行中可以包含任意数量的小写字母。</p>
-<pre>
-"[a-z]*" => T<a href="#learn-regex"><strong>he</strong></a> <a href="#learn-regex"><strong>car</strong></a> <a href="#learn-regex"><strong>parked</strong></a> <a href="#learn-regex"><strong>in</strong></a> <a href="#learn-regex"><strong>the</strong></a> <a href="#learn-regex"><strong>garage</strong></a> #21.
-</pre>
-
-<p>该 <code>*</code> 符号可以与元符号 <code>.</code> 用在一起，用来匹配任意字符串 <code>.*</code>。该 <code>*</code> 符号可以与空格符 <code>\s</code> 一起使用，用来匹配一串空格字符。<br>例如正则表达式 <code>\s*cat\s*</code>，表示: 零个或多个空格，后面跟小写字母 <code>c</code>，再后面跟小写字母 <code>a</code>，再再后面跟小写字母 <code>t</code>，后面再跟零个或多个空格。</p>
-<pre>
-"\s*cat\s*" => The fat<a href="#learn-regex"><strong> cat </strong></a>sat on the <a href="#learn-regex"><strong>cat</strong></a>.
-</pre>
-
-<h3 id="2-3-2-加号"><a href="#2-3-2-加号" class="headerlink" title="2.3.2 加号"></a>2.3.2 加号</h3><p>该符号 <code>+</code> 匹配上一个字符的一次或多次。例如正则表达式 <code>c.+t</code>，表示: 一个小写字母 <code>c</code>，后跟任意数量的字符，后跟小写字母 <code>t</code>。</p>
-<pre>
-"c.+t" => The fat <a href="#learn-regex"><strong>cat sat on the mat</strong></a>.
-</pre>
-
-<h3 id="2-3-3-问号"><a href="#2-3-3-问号" class="headerlink" title="2.3.3 问号"></a>2.3.3 问号</h3><p>在正则表达式中，元字符 <code>?</code> 用来表示前一个字符是可选的。该符号匹配前一个字符的零次或一次。<br>例如正则表达式 <code>[T]?he</code>，表示: 可选的大写字母 <code>T</code>，后面跟小写字母 <code>h</code>，后跟小写字母 <code>e</code>。</p>
-<pre>
-"[T]he" => <a href="#learn-regex"><strong>The</strong></a> car is parked in the garage.
-</pre>
-<pre>
-"[T]?he" => <a href="#learn-regex"><strong>The</strong></a> car is parked in t<a href="#learn-regex"><strong>he</strong></a> garage.
-</pre>
-
-<h2 id="2-4-花括号"><a href="#2-4-花括号" class="headerlink" title="2.4 花括号"></a>2.4 花括号</h2><p>在正则表达式中花括号(也被称为量词 ?)用于指定字符或一组字符可以重复的次数。例如正则表达式 <code>[0-9]&#123;2,3&#125;</code>，表示: 匹配至少2位数字但不超过3位(0到9范围内的字符)。</p>
-<pre>
-"[0-9]{2,3}" => The number was 9.<a href="#learn-regex"><strong>999</strong></a>7 but we rounded it off to <a href="#learn-regex"><strong>10</strong></a>.0.
-</pre>
-
-<p>我们可以省略第二个数字。例如正则表达式 <code>[0-9]&#123;2,&#125;</code>，表示: 匹配2个或更多个数字。如果我们也删除逗号，则正则表达式 <code>[0-9]&#123;2&#125;</code>，表示: 匹配正好为2位数的数字。</p>
-<pre>
-"[0-9]{2,}" => The number was 9.<a href="#learn-regex"><strong>9997</strong></a> but we rounded it off to <a href="#learn-regex"><strong>10</strong></a>.0.
-</pre>
-
-<pre>
-"[0-9]{2}" => The number was 9.<a href="#learn-regex"><strong>99</strong></a><a href="#learn-regex"><strong>97</strong></a> but we rounded it off to <a href="#learn-regex"><strong>10</strong></a>.0.
-</pre>
-
-<h2 id="2-5-字符组"><a href="#2-5-字符组" class="headerlink" title="2.5 字符组"></a>2.5 字符组</h2><p>字符组是一组写在圆括号内的子模式 <code>(...)</code>。正如我们在正则表达式中讨论的那样，如果我们把一个量词放在一个字符之后，它会重复前一个字符。<br>但是，如果我们把量词放在一个字符组之后，它会重复整个字符组。<br>例如正则表达式 <code>(ab)*</code> 表示匹配零个或多个的字符串 “ab”。我们还可以在字符组中使用元字符 <code>|</code>。例如正则表达式 <code>(c|g|p)ar</code>，表示: 小写字母 <code>c</code>、<code>g</code> 或 <code>p</code> 后面跟字母 <code>a</code>，后跟字母 <code>r</code>。</p>
-<pre>
-"(c|g|p)ar" => The <a href="#learn-regex"><strong>car</strong></a> is <a href="#learn-regex"><strong>par</strong></a>ked in the <a href="#learn-regex"><strong>gar</strong></a>age.
-</pre>
-
-<h2 id="2-6-分支结构"><a href="#2-6-分支结构" class="headerlink" title="2.6 分支结构"></a>2.6 分支结构</h2><p>在正则表达式中垂直条 <code>|</code> 用来定义分支结构，分支结构就像多个表达式之间的条件。现在你可能认为这个字符集和分支机构的工作方式一样。<br>但是字符集和分支结构巨大的区别是字符集只在字符级别上有作用，然而分支结构在表达式级别上依然可以使用。<br>例如正则表达式 <code>(T|t)he|car</code>，表示: 大写字母 <code>T</code> 或小写字母 <code>t</code>，后面跟小写字母 <code>h</code>，后跟小写字母 <code>e</code> 或小写字母 <code>c</code>，后跟小写字母 <code>a</code>，后跟小写字母 <code>r</code>。</p>
-<pre>
-"(T|t)he|car" => <a href="#learn-regex"><strong>The</strong></a> <a href="#learn-regex"><strong>car</strong></a> is parked in <a href="#learn-regex"><strong>the</strong></a> garage.
-</pre>
-
-<h2 id="2-7-转义特殊字符"><a href="#2-7-转义特殊字符" class="headerlink" title="2.7 转义特殊字符"></a>2.7 转义特殊字符</h2><p>正则表达式中使用反斜杠 <code>\</code> 来转义下一个字符。这将允许你使用保留字符来作为匹配字符 <code>&#123; &#125; [ ] / \ + * . $ ^ | ?</code>。在特殊字符前面加 <code>\</code>，就可以使用它来做匹配字符。<br>例如正则表达式 <code>.</code> 是用来匹配除了换行符以外的任意字符。现在要在输入字符串中匹配 <code>.</code> 字符，正则表达式 <code>(f|c|m)at\.?</code>，表示: 小写字母 <code>f</code>、<code>c</code> 或者 <code>m</code> 后跟小写字母 <code>a</code>，后跟小写字母 <code>t</code>，后跟可选的 <code>.</code> 字符。</p>
-<pre>
-"(f|c|m)at\.?" => The <a href="#learn-regex"><strong>fat</strong></a> <a href="#learn-regex"><strong>cat</strong></a> sat on the <a href="#learn-regex"><strong>mat.</strong></a>
-</pre>
-
-<h2 id="2-8-定位符"><a href="#2-8-定位符" class="headerlink" title="2.8 定位符"></a>2.8 定位符</h2><p>在正则表达式中，为了检查匹配符号是否是起始符号或结尾符号，我们使用定位符。<br>定位符有两种类型: 第一种类型是 <code>^</code> 检查匹配字符是否是起始字符，第二种类型是 <code>$</code>，它检查匹配字符是否是输入字符串的最后一个字符。</p>
-<h3 id="2-8-1-插入符号"><a href="#2-8-1-插入符号" class="headerlink" title="2.8.1 插入符号"></a>2.8.1 插入符号</h3><p>插入符号 <code>^</code> 符号用于检查匹配字符是否是输入字符串的第一个字符。如果我们使用正则表达式 <code>^a</code> (如果a是起始符号)匹配字符串 <code>abc</code>，它会匹配到 <code>a</code>。<br>但是如果我们使用正则表达式 <code>^b</code>，它是匹配不到任何东西的，因为在字符串 <code>abc</code> 中 “b” 不是起始字符。<br>让我们来看看另一个正则表达式 <code>^(T|t)he</code>，这表示: 大写字母 <code>T</code> 或小写字母 <code>t</code> 是输入字符串的起始符号，后面跟着小写字母 <code>h</code>，后跟小写字母 <code>e</code>。</p>
-<pre>
-"(T|t)he" => <a href="#learn-regex"><strong>The</strong></a> car is parked in <a href="#learn-regex"><strong>the</strong></a> garage.
-</pre>
-
-<pre>
-"^(T|t)he" => <a href="#learn-regex"><strong>The</strong></a> car is parked in the garage.
-</pre>
-
-<h3 id="2-8-2-美元符号"><a href="#2-8-2-美元符号" class="headerlink" title="2.8.2 美元符号"></a>2.8.2 美元符号</h3><p>美元 <code>$</code> 符号用于检查匹配字符是否是输入字符串的最后一个字符。例如正则表达式 <code>(at\.)$</code>，表示: 小写字母 <code>a</code>，后跟小写字母 <code>t</code>，后跟一个 <code>.</code> 字符，且这个匹配器必须是字符串的结尾。</p>
-<pre>
-"(at\.)" => The fat c<a href="#learn-regex"><strong>at.</strong></a> s<a href="#learn-regex"><strong>at.</strong></a> on the m<a href="#learn-regex"><strong>at.</strong></a>
-</pre>
-
-<pre>
-"(at\.)$" => The fat cat sat on the m<a href="#learn-regex"><strong>at.</strong></a>
-</pre>
-
-<h2 id="3-简写字符集"><a href="#3-简写字符集" class="headerlink" title="3. 简写字符集"></a>3. 简写字符集</h2><p>正则表达式为常用的字符集和常用的正则表达式提供了简写。简写字符集如下:</p>
-<table>
-<thead>
-<tr>
-<th align="center">简写</th>
-<th>描述</th>
-</tr>
-</thead>
-<tbody><tr>
-<td align="center">.</td>
-<td>匹配除换行符以外的任意字符</td>
-</tr>
-<tr>
-<td align="center">\w</td>
-<td>匹配所有字母和数字的字符: <code>[a-zA-Z0-9_]</code></td>
-</tr>
-<tr>
-<td align="center">\W</td>
-<td>匹配非字母和数字的字符: <code>[^\w]</code></td>
-</tr>
-<tr>
-<td align="center">\d</td>
-<td>匹配数字: <code>[0-9]</code></td>
-</tr>
-<tr>
-<td align="center">\D</td>
-<td>匹配非数字: <code>[^\d]</code></td>
-</tr>
-<tr>
-<td align="center">\s</td>
-<td>匹配空格符: <code>[\t\n\f\r\p&#123;Z&#125;]</code></td>
-</tr>
-<tr>
-<td align="center">\S</td>
-<td>匹配非空格符: <code>[^\s]</code></td>
-</tr>
-</tbody></table>
-<h2 id="4-断言"><a href="#4-断言" class="headerlink" title="4. 断言"></a>4. 断言</h2><p>后行断言和先行断言有时候被称为断言，它们是特殊类型的 <em><strong>非捕获组</strong></em> (用于匹配模式，但不包括在匹配列表中)。当我们在一种特定模式之前或者之后有这种模式时，会优先使用断言。<br>例如我们想获取输入字符串 <code>$4.44 and $10.88</code> 中 <code>$</code> 字符之前的所有数字。我们可以使用这个正则表达式 <code>(?&lt;=\$)[0-9\.]*</code>，表示: 获取 <code>$</code> 字符之前的所有的数字包含 <code>.</code> 字符。<br>以下是正则表达式中使用的断言:</p>
-<table>
-<thead>
-<tr>
-<th align="center">符号</th>
-<th>描述</th>
-</tr>
-</thead>
-<tbody><tr>
-<td align="center">?&#x3D;</td>
-<td>正向先行断言</td>
-</tr>
-<tr>
-<td align="center">?!</td>
-<td>负向先行断言</td>
-</tr>
-<tr>
-<td align="center">?&lt;&#x3D;</td>
-<td>正向后行断言</td>
-</tr>
-<tr>
-<td align="center">?&lt;!</td>
-<td>负向后行断言</td>
-</tr>
-</tbody></table>
-<h3 id="4-1-正向先行断言"><a href="#4-1-正向先行断言" class="headerlink" title="4.1 正向先行断言"></a>4.1 正向先行断言</h3><p>正向先行断言认为第一部分的表达式必须是先行断言表达式。返回的匹配结果仅包含与第一部分表达式匹配的文本。<br>要在一个括号内定义一个正向先行断言，在括号中问号和等号是这样使用的 <code>(?=...)</code>。先行断言表达式写在括号中的等号后面。<br>例如正则表达式 <code>(T|t)he(?=\sfat)</code>，表示: 匹配大写字母 <code>T</code> 或小写字母 <code>t</code>，后面跟字母 <code>h</code>，后跟字母 <code>e</code>。<br>在括号中，我们定义了正向先行断言，它会引导正则表达式引擎匹配 <code>The</code> 或 <code>the</code> 后面跟着 <code>fat</code>。</p>
-<pre>
-"(T|t)he(?=\sfat)" => <a href="#learn-regex"><strong>The</strong></a> fat cat sat on the mat.
-</pre>
-
-<h3 id="4-2-负向先行断言"><a href="#4-2-负向先行断言" class="headerlink" title="4.2 负向先行断言"></a>4.2 负向先行断言</h3><p>当我们需要从输入字符串中获取不匹配表达式的内容时，使用负向先行断言。负向先行断言的定义跟我们定义的正向先行断言一样，<br>唯一的区别是不是等号 <code>=</code>，我们使用否定符号 <code>!</code>，例如 <code>(?!...)</code>。<br>我们来看看下面的正则表达式 <code>(T|t)he(?!\sfat)</code>，表示: 从输入字符串中获取全部 <code>The</code> 或者 <code>the</code> 且不匹配 <code>fat</code> 前面加上一个空格字符。</p>
-<pre>
-"(T|t)he(?!\sfat)" => The fat cat sat on <a href="#learn-regex"><strong>the</strong></a> mat.
-</pre>
-
-<h3 id="4-3-正向后行断言"><a href="#4-3-正向后行断言" class="headerlink" title="4.3 正向后行断言"></a>4.3 正向后行断言</h3><p>正向后行断言是用于获取在特定模式之前的所有匹配内容。正向后行断言表示为 <code>(?&lt;=...)</code>。例如正则表达式 <code>(?&lt;=(T|t)he\s)(fat|mat)</code>，表示: 从输入字符串中获取在单词 <code>The</code> 或 <code>the</code> 之后的所有 <code>fat</code> 和 <code>mat</code> 单词。</p>
-<pre>
-"(?<=(T|t)he\s)(fat|mat)" => The <a href="#learn-regex"><strong>fat</strong></a> cat sat on the <a href="#learn-regex"><strong>mat</strong></a>.
-</pre>
-
-<h3 id="4-4-负向后行断言"><a href="#4-4-负向后行断言" class="headerlink" title="4.4 负向后行断言"></a>4.4 负向后行断言</h3><p>负向后行断言是用于获取不在特定模式之前的所有匹配的内容。负向后行断言表示为 <code>(?&lt;!...)</code>。例如正则表达式 <code>(?&lt;!(T|t)he\s)(cat)</code>，表示: 在输入字符中获取所有不在 <code>The</code> 或 <code>the</code> 之后的所有单词 <code>cat</code>。</p>
-<pre>
-"(?&lt;!(T|t)he\s)(cat)" => The cat sat on <a href="#learn-regex"><strong>cat</strong></a>.
-</pre>
-
-<h2 id="5-标记"><a href="#5-标记" class="headerlink" title="5. 标记"></a>5. 标记</h2><p>标记也称为修饰符，因为它会修改正则表达式的输出。这些标志可以以任意顺序或组合使用，并且是正则表达式的一部分。</p>
-<table>
-<thead>
-<tr>
-<th align="center">标记</th>
-<th>描述</th>
-</tr>
-</thead>
-<tbody><tr>
-<td align="center">i</td>
-<td>不区分大小写: 将匹配设置为不区分大小写。</td>
-</tr>
-<tr>
-<td align="center">g</td>
-<td>全局搜索: 搜索整个输入字符串中的所有匹配。</td>
-</tr>
-<tr>
-<td align="center">m</td>
-<td>多行匹配: 会匹配输入字符串每一行。</td>
-</tr>
-</tbody></table>
-<h3 id="5-1-不区分大小写"><a href="#5-1-不区分大小写" class="headerlink" title="5.1 不区分大小写"></a>5.1 不区分大小写</h3><p><code>i</code> 修饰符用于执行不区分大小写匹配。例如正则表达式 <code>/The/gi</code>，表示: 大写字母 <code>T</code>，后跟小写字母 <code>h</code>，后跟字母 <code>e</code>。<br>但是在正则匹配结束时 <code>i</code> 标记会告诉正则表达式引擎忽略这种情况。正如你所看到的，我们还使用了 <code>g</code> 标记，因为我们要在整个输入字符串中搜索匹配。</p>
-<pre>
-"The" => <a href="#learn-regex"><strong>The</strong></a> fat cat sat on the mat.
-</pre>
-
-<pre>
-"/The/gi" => <a href="#learn-regex"><strong>The</strong></a> fat cat sat on <a href="#learn-regex"><strong>the</strong></a> mat.
-</pre>
-
-<h3 id="5-2-全局搜索"><a href="#5-2-全局搜索" class="headerlink" title="5.2 全局搜索"></a>5.2 全局搜索</h3><p><code>g</code> 修饰符用于执行全局匹配 (会查找所有匹配，不会在查找到第一个匹配时就停止)。<br>例如正则表达式 <code>/.(at)/g</code>，表示: 除换行符之外的任意字符，后跟小写字母 <code>a</code>，后跟小写字母 <code>t</code>。<br>因为我们在正则表达式的末尾使用了 <code>g</code> 标记，它会从整个输入字符串中找到每个匹配项。</p>
-<pre>
-".(at)" => The <a href="#learn-regex"><strong>fat</strong></a> cat sat on the mat.
-</pre>
-
-<pre>
-"/.(at)/g" => The <a href="#learn-regex"><strong>fat</strong></a> <a href="#learn-regex"><strong>cat</strong></a> <a href="#learn-regex"><strong>sat</strong></a> on the <a href="#learn-regex"><strong>mat</strong></a>.
-</pre>
-
-<h3 id="5-3-多行匹配"><a href="#5-3-多行匹配" class="headerlink" title="5.3 多行匹配"></a>5.3 多行匹配</h3><p><code>m</code> 修饰符被用来执行多行的匹配。正如我们前面讨论过的 <code>(^, $)</code>，使用定位符来检查匹配字符是输入字符串开始或者结束。但是我们希望每一行都使用定位符，所以我们就使用 <code>m</code> 修饰符。<br>例如正则表达式 <code>/at(.)?$/gm</code>，表示: 小写字母 <code>a</code>，后跟小写字母 <code>t</code>，匹配除了换行符以外任意字符零次或一次。而且因为 <code>m</code> 标记，现在正则表达式引擎匹配字符串中每一行的末尾。</p>
-<pre>
-"/.at(.)?$/" => The fat
-                cat sat
-                on the <a href="#learn-regex"><strong>mat.</strong></a>
-</pre>
-
-<pre>
-"/.at(.)?$/gm" => The <a href="#learn-regex"><strong>fat</strong></a>
-                  cat <a href="#learn-regex"><strong>sat</strong></a>
-                  on the <a href="#learn-regex"><strong>mat.</strong></a>
-</pre>
-
-<h2 id="常用正则表达式"><a href="#常用正则表达式" class="headerlink" title="常用正则表达式"></a>常用正则表达式</h2><ul>
-<li><strong>正整数</strong>: <code>^\d+$</code></li>
-<li><strong>负整数</strong>: <code>^-\d+$</code></li>
-<li><strong>电话号码</strong>: <code>^+?[\d\s]&#123;3,&#125;$</code></li>
-<li><strong>电话代码</strong>: <code>^+?[\d\s]+(?[\d\s]&#123;10,&#125;$</code></li>
-<li><strong>整数</strong>: <code>^-?\d+$</code></li>
-<li><strong>用户名</strong>: <code>^[\w\d_.]&#123;4,16&#125;$</code></li>
-<li><strong>字母数字字符</strong>: <code>^[a-zA-Z0-9]*$</code></li>
-<li><strong>带空格的字母数字字符</strong>: <code>^[a-zA-Z0-9 ]*$</code></li>
-<li><strong>密码</strong>: <code>^(?=^.&#123;6,&#125;$)((?=.*[A-Za-z0-9])(?=.*[A-Z])(?=.*[a-z]))^.*$</code></li>
-<li><strong>电子邮件</strong>: <code>^([a-zA-Z0-9._%-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]&#123;2,4&#125;)*$</code></li>
-<li><strong>IPv4 地址</strong>: <code>^((?:(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.)&#123;3&#125;(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?))*$</code></li>
-<li><strong>小写字母</strong>: <code>^([a-z])*$</code></li>
-<li><strong>大写字母</strong>: <code>^([A-Z])*$</code></li>
-<li><strong>网址</strong>: <code>^(((http|https|ftp):\/\/)?([[a-zA-Z0-9]\-\.])+(\.)([[a-zA-Z0-9]])&#123;2,4&#125;([[a-zA-Z0-9]\/+=%&amp;_\.~?\-]*))*$</code></li>
-<li><strong>VISA 信用卡号码</strong>: <code>^(4[0-9]&#123;12&#125;(?:[0-9]&#123;3&#125;)?)*$</code></li>
-<li><strong>日期 (MM&#x2F;DD&#x2F;YYYY)</strong>: <code>^(0?[1-9]|1[012])[- /.](0?[1-9]|[12][0-9]|3[01])[- /.](19|20)?[0-9]&#123;2&#125;$</code></li>
-<li><strong>日期 (YYYY&#x2F;MM&#x2F;DD)</strong>: <code>^(19|20)?[0-9]&#123;2&#125;[- /.](0?[1-9]|1[012])[- /.](0?[1-9]|[12][0-9]|3[01])$</code></li>
-<li><strong>万事达信用卡号码</strong>: <code>^(5[1-5][0-9]&#123;14&#125;)*$</code></li>
-</ul>
-<h2 id="Contribution"><a href="#Contribution" class="headerlink" title="Contribution"></a>Contribution</h2><ul>
-<li>Report issues</li>
-<li>Open pull request with improvements</li>
-<li>Spread the word</li>
-</ul>
-<h2 id="License"><a href="#License" class="headerlink" title="License"></a>License</h2><p>MIT © <a href="mailto:ziishaned@gmail.com">Zeeshan Ahmed</a></p>
-<hr>
-<p><strong><a href="#%E4%BB%80%E4%B9%88%E6%98%AF%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F-">⬆ top</a></strong></p>
-
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2019/07/16/2019-07-16-%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
       
     </div>
 
@@ -1332,7 +925,7 @@
     <link itemprop="mainEntityOfPage" href="https://x51n.github.io/2019/07/01/2019-07-01-ORACLE%E6%95%B0%E6%8D%AE%E5%BA%93%E5%AE%89%E8%A3%85%E8%BF%87%E7%A8%8B/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="image" content="https://theme-next.js.org/images/logo.svg">
       <meta itemprop="name" content="x51n">
     </span>
 
@@ -1365,7 +958,7 @@
         <i class="far fa-calendar-check"></i>
       </span>
       <span class="post-meta-item-text">更新于</span>
-      <time title="修改时间：2023-02-21 01:19:43" itemprop="dateModified" datetime="2023-02-21T01:19:43+08:00">2023-02-21</time>
+      <time title="修改时间：2023-02-21 01:37:44" itemprop="dateModified" datetime="2023-02-21T01:37:44+08:00">2023-02-21</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -1392,113 +985,14 @@
 <p>手动安装以下安装包：</p>
 <p> lesstif2 暂时忽略</p>
 <p>对于 <code>libpthread-stubs0</code> 包</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">sudo su</span><br><span class="line">echo &#x27;deb http://cz.archive.ubuntu.com/ubuntu precise main universe&#x27; &gt;&gt; /etc/apt/sources.list.d/extra.list</span><br><span class="line">apt-get update</span><br><span class="line">apt-get install libpthread-stubs0</span><br><span class="line">mv /etc/apt/sources.list.d/extra.list /etc/apt/sources.list.d/extra.list.backup</span><br><span class="line">apt-get update</span><br><span class="line">exit</span><br></pre></td></tr></table></figure>
-
-
-
-<h4 id="2-检测系统变量"><a href="#2-检测系统变量" class="headerlink" title="2. 检测系统变量"></a>2. 检测系统变量</h4><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">sudo /sbin/sysctl -a | grep sem </span><br><span class="line">sudo /sbin/sysctl -a | grep shm </span><br><span class="line">sudo /sbin/sysctl -a | grep file-max </span><br><span class="line">sudo /sbin/sysctl -a | grep aio-max </span><br><span class="line">sudo /sbin/sysctl -a | grep ip_local_port_range </span><br><span class="line">sudo /sbin/sysctl -a | grep rmem_default </span><br><span class="line">sudo /sbin/sysctl -a | grep rmem_max </span><br><span class="line">sudo /sbin/sysctl -a | grep wmem_default </span><br><span class="line">sudo /sbin/sysctl -a | grep wmem_max </span><br></pre></td></tr></table></figure>
-
-<p>然后根据上面命令中得到的参数值在&#x2F;etc&#x2F;sysctl.conf中增加对应数据</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo vim /etc/sysctl.conf</span><br></pre></td></tr></table></figure>
-
-<p>把sysctl.conf中的以下内容用查得的值填上</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">fs.aio-max-nr = ？ </span><br><span class="line">fs.file-max = ？ </span><br><span class="line">kernel.shmall = ？ </span><br><span class="line">kernel.shmmax = ？ </span><br><span class="line">kernel.shmmni = ？ </span><br><span class="line">kernel.sem = ？ </span><br><span class="line">net.ipv4.ip_local_port_range = ？ </span><br><span class="line">net.core.rmem_default = ？ </span><br><span class="line">net.core.rmem_max = ？ </span><br><span class="line">net.core.wmem_default = ？ </span><br><span class="line">net.core.wmem_max = ？</span><br></pre></td></tr></table></figure>
-
-<p>运行一下命令更新内核参数：</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo sysctl -p  </span><br></pre></td></tr></table></figure>
-
-<p>修改安装Oracle的用户的资源限制</p>
-<p>对于Ubuntu 16.04.2 LTS仅需添加下面的内容：</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">root@dbserver:~# vi /etc/security/limits.conf</span><br><span class="line">oracle hard nproc 16384</span><br><span class="line">oracle soft stack 10240</span><br><span class="line">oracle hard stack 32768</span><br><span class="line">oracle soft memlock 3145728</span><br><span class="line">oracle hard memlock 3145728</span><br></pre></td></tr></table></figure>
-
-<h4 id="3-创建用户组和用户"><a href="#3-创建用户组和用户" class="headerlink" title="3. 创建用户组和用户"></a>3. 创建用户组和用户</h4><p>创建oinstall、dba、oper用户组和oracle用户：</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">root@dbserver:~# groupadd oinstall</span><br><span class="line">root@dbserver:~# groupadd dba</span><br><span class="line">root@dbserver:~# groupadd oper</span><br><span class="line">root@dbserver:~# useradd -g oinstall -G dba,oper oracle</span><br><span class="line">root@dbserver:~# passwd oracle</span><br><span class="line">Enter new UNIX password:</span><br><span class="line">Retype new UNIX password:</span><br><span class="line">passwd: password updated successfully</span><br><span class="line">//Ubuntu下需要手动创建主目录：</span><br><span class="line">root@dbserver:~# mkdir /home/oracle</span><br><span class="line">root@dbserver:~# chown oracle:oinstall ~oracle</span><br></pre></td></tr></table></figure>
-
-<p>检查umask变量，使用oracle用户登录：</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">root@dbserver:~# su - oracle</span><br><span class="line"># su - oracle</span><br><span class="line">$ umask</span><br><span class="line">0022</span><br><span class="line">//确保umask=022，否则修改.bash_profile添加如下行：</span><br><span class="line">$ vi ~/.profile</span><br><span class="line">umask 0022</span><br></pre></td></tr></table></figure>
-
-<h4 id="4-创建软件安装目录"><a href="#4-创建软件安装目录" class="headerlink" title="4. 创建软件安装目录"></a>4. 创建软件安装目录</h4><p>创建ORACLE_BASE并授权：</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">root@dbserver:~# mkdir -p /u01/app/</span><br><span class="line">root@dbserver:~# chown -R oracle:oinstall /u01</span><br><span class="line">root@dbserver:~# chmod -R 775 /u01</span><br></pre></td></tr></table></figure>
-
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">#oracle安装目录，本步创建的文件夹</span><br><span class="line">export ORACLE_BASE=/u01/app/oracle</span><br><span class="line">#网上说可以随便写</span><br><span class="line">export ORACLE_HOME=$ORACLE_BASE/product/11.2.0/dbhome_1</span><br><span class="line">#数据库的sid</span><br><span class="line">export ORACLE_SID=orcl</span><br><span class="line">export ORACLE_UNQNAME=orcl</span><br><span class="line">#默认字符集</span><br><span class="line">export NLS_LANG=.AL32UTF8</span><br><span class="line">#环境变量</span><br><span class="line">export PATH=$&#123;PATH&#125;:$&#123;ORACLE_HOME&#125;/bin/:$ORACLE_HOME/lib64;</span><br></pre></td></tr></table></figure>
-
-<ol>
-<li>关于oracle图形化安装过程中出现的黑色竖线的处理办法</li>
-</ol>
-<p>默认我们安装的时候都是: .&#x2F;runInstaller 也就是直接运行安装文件，但是这种默认安装的方式就会出现上述错误，为了避免上述情况出现可以通过指定参数安装：</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">./runInstaller -jreLoc /usr/lib/jvm/jdk1.8.0_211</span><br></pre></td></tr></table></figure>
-
-
-
-<p>链接一下</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">sudo mkdir /usr/lib64 </span><br><span class="line">sudo ln -s /etc /etc/rc.d </span><br><span class="line">sudo ln -s /lib/x86_64-linux-gnu/libgcc_s.so.1 /lib64/ </span><br><span class="line">sudo ln -s /usr/bin/awk /bin/awk </span><br><span class="line">sudo ln -s /usr/bin/basename /bin/basename </span><br><span class="line">sudo ln -s /usr/bin/rpm /bin/rpm </span><br><span class="line">sudo ln -s /usr/lib/x86_64-linux-gnu/libc_nonshared.a /usr/lib64/libc_nonshared.a </span><br><span class="line">sudo ln -s /usr/lib/x86_64-linux-gnu/libpthread_nonshared.a /usr/lib64/libpthread_nonshared.a </span><br><span class="line">sudo ln -s /usr/lib/x86_64-linux-gnu/libstdc++.so.6 /lib64/ </span><br><span class="line">sudo ln -s /usr/lib/x86_64-linux-gnu/libstdc++.so.6 /usr/lib64/ </span><br><span class="line">echo &#x27;Red Hat Linux release 5&#x27; &gt; /etc/redhat-release</span><br></pre></td></tr></table></figure>
-
-<p>环境变量</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">#oracle安装目录，第5步创建的文件夹</span><br><span class="line">export ORACLE_BASE=/u01/app/oracle</span><br><span class="line">#网上说可以随便写</span><br><span class="line">export ORACLE_HOME=$ORACLE_BASE/product/11.2.0/dbhome_1</span><br><span class="line">#数据库的sid</span><br><span class="line">export ORACLE_SID=orcl</span><br><span class="line">export ORACLE_UNQNAME=orcl</span><br><span class="line">#默认字符集</span><br><span class="line">export NLS_LANG=.AL32UTF8</span><br><span class="line">#环境变量</span><br><span class="line">export PATH=$&#123;PATH&#125;:$&#123;ORACLE_HOME&#125;/bin/:$ORACLE_HOME/lib64;</span><br></pre></td></tr></table></figure>
-
-
-
-<p>错误1：Error in invoking target ‘client_sharedlib’ of makefile ‘&#x2F;u01&#x2F;app&#x2F;oracle&#x2F;product&#x2F;11.2.0&#x2F;dbhome_1&#x2F;rdbms&#x2F;lib&#x2F;ins_rdbms.mk’.</p>
-<p>打开日志文件，查找出错原因</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">root@dbserver:~# find /usr -name libpthread_nonshared.a</span><br><span class="line">/usr/lib/x86_64-linux-gnu/libpthread_nonshared.a</span><br><span class="line">root@dbserver:~# ln -s /usr/lib/x86_64-linux-gnu/libpthread_nonshared.a /usr/lib64/libpthread_nonshared.a</span><br></pre></td></tr></table></figure>
-
-<p>错误2：　lib&#x2F;&#x2F;libagtsh.so: undefined reference to &#96;nnfyboot’ in make: rdbms&#x2F;lib&#x2F;dg4odbc] Error 1</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">sudo ln -sf /bin/bash /bin/sh</span><br><span class="line">sudo ln -s /usr/bin/awk /bin/awk</span><br><span class="line">sudo ln -s /usr/bin/rpm /bin/rpm </span><br><span class="line">sudo ln -s /usr/bin/basename /bin/basename</span><br><span class="line"></span><br><span class="line">cd $ORACLE_HOME/lib</span><br><span class="line">ln -s libclient11.a libagtsh.a</span><br><span class="line">$ORACLE_HOME/bin/genagtsh $ORACLE_HOME/lib/libagtsh.so 1.0</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-
-<p>错误3：libstdc++.so.5: undefined reference to &#96;<a href="mailto:&#109;&#x65;&#109;&#99;&#x70;&#x79;&#64;&#71;&#76;&#73;&#66;&#67;&#95;&#50;&#46;&#49;&#x34;">&#109;&#x65;&#109;&#99;&#x70;&#x79;&#64;&#71;&#76;&#73;&#66;&#67;&#95;&#50;&#46;&#49;&#x34;</a>‘</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">这是因为ubuntu 13.04带的libstdc++5.0 和oracle所要不兼容所致</span><br><span class="line"></span><br><span class="line">从这里 ftp://rpmfind.net/linux/Mandriva/official/2010.0/x86_64/media/contrib/release/libstdc++5-3.3.6-4mdv2009.0.x86_64.rpm 下载，</span><br><span class="line">直接安压缩包打开提取，并提取到/usr/lib/x86_64-linux-gnu，然后重试就可以了</span><br></pre></td></tr></table></figure>
-
-<p>错误4 ：</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">/u01/app/oracle/product/11.2.0/dbhome_1/sysman/lib//libnmectl.a(nmectlt.o): In function `nmectlt_genSudoProps&#x27;:</span><br><span class="line">nmectlt.c:(.text+0x76): undefined reference to `B_DestroyKeyObject&#x27;</span><br><span class="line">nmectlt.c:(.text+0x7f): undefined reference to `B_DestroyKeyObject&#x27;</span><br><span class="line">nmectlt.c:(.text+0x88): undefined reference to `B_DestroyKeyObject&#x27;</span><br><span class="line">nmectlt.c:(.text+0x91): undefined reference to `B_DestroyKeyObject&#x27;</span><br></pre></td></tr></table></figure>
-
-<p>解决办法：修改“emdctl”的编译参数，编辑“&#x2F;u01&#x2F;app&#x2F;oracle&#x2F;product&#x2F;11.2.0&#x2F;dbhome_1&#x2F;sysman&#x2F;lib&#x2F;ins_emagent.mk”文件，将</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sed -i &#x27;s/^(\s$(MK_EMAGENT_NMECTL))\s$/\1 -lnnz11/g&#x27; $ORACLE_HOME/sysman/lib/ins_emagent.mk</span><br></pre></td></tr></table></figure>
-
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">171 #===========================</span><br><span class="line">172 # emdctl</span><br><span class="line">173 #===========================</span><br><span class="line">174</span><br><span class="line">175 $(SYSMANBIN)emdctl:</span><br><span class="line">176 $(MK_EMAGENT_NMECTL)</span><br></pre></td></tr></table></figure>
-
-<p>改为：</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">171 #===========================</span><br><span class="line">172 # emdctl</span><br><span class="line">173 #===========================</span><br><span class="line">174</span><br><span class="line">175 $(SYSMANBIN)emdctl:</span><br><span class="line">176 $(MK_EMAGENT_NMECTL) -lnnz11</span><br></pre></td></tr></table></figure>
-
-<p>错误5：</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">kdxd4.c:(text.hot+0x2587): undefined reference to `lnxren&#x27;</span><br><span class="line">collect2: error: ld returned 1 exit status</span><br><span class="line"></span><br><span class="line">INFO: /u01/app/oracle/product/11.2.0/dbhome_1/bin/genorasdksh: Failed to link liborasdk.so.11.1</span><br></pre></td></tr></table></figure>
-
-<p>解决：</p>
-<p>直接修改“&#x2F;u01&#x2F;app&#x2F;oracle&#x2F;product&#x2F;11.2.0&#x2F;dbhome_1&#x2F;bin&#x2F;genorasdksh”文件，将</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">289 $LD $LD_RUNTIME $LD_OPT $LD_OUT $LD_SELF_CONTAINED $BASE_LIB \</span><br><span class="line">290 $LD_OBJS $LD_SYMS $OLIBS $SYSLIBS $USRLIBS</span><br></pre></td></tr></table></figure>
-<p>改为</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">289 $LD $LD_RUNTIME $LD_OPT -Wl,--no-as-needed $LD_OUT $LD_SELF_CONTAINED $BASE_LIB \</span><br><span class="line">290 $LD_OBJS $LD_SYMS $OLIBS $SYSLIBS $USRLIBS</span><br></pre></td></tr></table></figure>
-
-<p>安装完成后，执行Root Scripts。<br>执行orainstRoot.sh：</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">root@dbserver:~# /u01/app/oraInventory/orainstRoot.sh</span><br></pre></td></tr></table></figure>
-
-<p>错误7：</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">libhasgen11.so: undefined reference to `procr_get_last_error&#x27;</span><br></pre></td></tr></table></figure>
-
-<p>解决：</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sed -i &#x27;s/^\(\s*\)\(\$(OCRLIBS_DEFAULT)\)/\1  -Wl,--no-as-needed \2/g&#x27; /u01/app/oracle/product/11.2.0/dbhome_1/srvm/lib/ins_srvm.mk</span><br></pre></td></tr></table></figure>
-
-<p>错误8：</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">nsglsn.c:(.text+0xc29): undefined reference to `ons_subscriber_close</span><br></pre></td></tr></table></figure>
-
-<p>解决：</p>
-<p>sed -i ‘s&#x2F;^(TNSLSNR_LINKLINE.*$(TNSLSNR_OFILES)) ($(LINKTTLIBS))&#x2F;\1 -Wl,–no-as-needed \2&#x2F;g’ &#x2F;u01&#x2F;app&#x2F;oracle&#x2F;product&#x2F;11.2.0&#x2F;dbhome_1&#x2F;network&#x2F;lib&#x2F;env_network.mk</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">To solve error # libocrutl11.so: undefined reference to `lfifcp&#x27; rdbms/lib/ins_rdbms.mk, enter the commands:</span><br><span class="line">sed -i &#x27;s/^\(ORACLE_LINKLINE.*\$(ORACLE_LINKER)\) \(\$(PL_FLAGS)\)/\1 -Wl,--no-as-needed \2/g&#x27; /u01/app/oracle/product/11.2.0/dbhome_1/rdbms/lib/env_rdbms.mk</span><br></pre></td></tr></table></figure>
-
-<blockquote>
-<blockquote>
-<blockquote>
-<blockquote>
-<blockquote>
-<blockquote>
-<blockquote>
-</blockquote>
-</blockquote>
-</blockquote>
-</blockquote>
-</blockquote>
-</blockquote>
-</blockquote>
-
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2019/07/01/2019-07-01-ORACLE%E6%95%B0%E6%8D%AE%E5%BA%93%E5%AE%89%E8%A3%85%E8%BF%87%E7%A8%8B/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
       
     </div>
 
@@ -1527,7 +1021,7 @@
     <link itemprop="mainEntityOfPage" href="https://x51n.github.io/2019/06/24/2019-06-24-%E8%BF%90%E8%A1%8CORB-SLAM/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="image" content="https://theme-next.js.org/images/logo.svg">
       <meta itemprop="name" content="x51n">
     </span>
 
@@ -1560,7 +1054,7 @@
         <i class="far fa-calendar-check"></i>
       </span>
       <span class="post-meta-item-text">更新于</span>
-      <time title="修改时间：2023-02-21 01:19:43" itemprop="dateModified" datetime="2023-02-21T01:19:43+08:00">2023-02-21</time>
+      <time title="修改时间：2023-02-21 01:37:44" itemprop="dateModified" datetime="2023-02-21T01:37:44+08:00">2023-02-21</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
@@ -1619,19 +1113,13 @@
   </span>
   <span class="author" itemprop="copyrightHolder">x51n</span>
 </div>
-  <div class="powered-by">由 <a href="https://hexo.io/" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/muse/" rel="noopener" target="_blank">NexT.Muse</a> 强力驱动
+  <div class="powered-by">由 <a href="https://hexo.io/" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/" rel="noopener" target="_blank">NexT.Gemini</a> 强力驱动
   </div>
 
     </div>
   </footer>
 
   
-  <div class="toggle sidebar-toggle" role="button">
-    <span class="toggle-line"></span>
-    <span class="toggle-line"></span>
-    <span class="toggle-line"></span>
-  </div>
-  <div class="sidebar-dimmer"></div>
   <div class="back-to-top" role="button" aria-label="返回顶部">
     <i class="fa fa-arrow-up fa-lg"></i>
     <span>0%</span>
@@ -1644,7 +1132,7 @@
 
   
   <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js" integrity="sha256-XL2inqUJaslATFnHdJOi9GfQ60on8Wx1C2H8DYiN1xY=" crossorigin="anonymous"></script>
-<script src="/js/comments.js"></script><script src="/js/utils.js"></script><script src="/js/motion.js"></script><script src="/js/schemes/muse.js"></script><script src="/js/next-boot.js"></script>
+<script src="/js/comments.js"></script><script src="/js/utils.js"></script><script src="/js/motion.js"></script><script src="/js/next-boot.js"></script>
 
   
 
